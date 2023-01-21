@@ -6,9 +6,15 @@ export default function CardComponent({ coverimage, author, title, subtitle }) {
   return (
     <StyledCard>
       {coverimage ? (
-        <Image src={coverimage} width={70} height={100} alt={title} />
+        <Image src={coverimage} width={70} height={100} alt={title} priority />
       ) : (
-        <Image src={dummyBook} width={70} height={100} alt="No picture" />
+        <Image
+          src={dummyBook}
+          width={70}
+          height={100}
+          alt="No picture"
+          priority
+        />
       )}
       <StyledBookOverview>
         <h2>{author}</h2>
