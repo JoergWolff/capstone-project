@@ -18,7 +18,7 @@ export const initialData = [
     author: "Stephen King",
     title: "Shinning",
     subtitle: "",
-    coverImg: "https://covers.openlibrary.org/b/id/1000182-L.jpg",
+    coverImg: "",
     isbn10: "3-404-13008-1",
     teaser:
       "Jack Torrance, ein ehemaliger Lehrer und „trockener“ Alkoholiker, hofft, sein Leben wieder in den Griff zu bekommen, indem er für einen Winter die Stelle des Hausmeisters im abgelegenen Overlook-Hotel annimmt. Jack hat seine Stelle als Englischlehrer verloren, weil er einen Schüler geschlagen hatte. Seinem Sohn Danny, den er innig liebt, brach er betrunken sogar den Arm, als dieser drei Jahre alt war und einige Papiere in Unordnung gebracht hatte. Jacks Frau Wendy erwägt, sich wegen dieser Wutanfälle scheiden zu lassen. Sie vertagt aber die Entscheidung und hofft, dass der Aufenthalt im Overlook-Hotel die drei wieder als Familie zusammenschweißen wird.",
@@ -30,7 +30,7 @@ export const initialData = [
     author: "Stephen King",
     title: "Carrie",
     subtitle: "",
-    coverImg: "https://covers.openlibrary.org/b/id/9256029-L.jpg",
+    coverImg: "",
     isbn10: "3-404-13121-5",
     teaser:
       "Im Mittelpunkt der Handlung steht die 16-jährige Schülerin Carietta White, genannt Carrie, die in der US-Kleinstadt Chamberlain lebt. Carrie wächst ohne ihren Vater auf, der vor ihrer Geburt auf einer Baustelle ums Leben gekommen ist. Bereits im Alter von drei Jahren lässt sie mit ihren telekinetischen Kräften einen Steinregen über das Haus niedergehen, in dem sie mit ihrer Mutter lebt, als diese ihr in religiösem Wahn die Augen herausschneiden will.Im Alter von 16 Jahren bekommt Carrie nach dem Sportunterricht unter der Dusche ihre erste Periode. Sie erschrickt und ihre Mitschülerinnen hänseln und demütigen sie deshalb. In der Folge treten einige Fälle von Telekinese als Reaktion auf Beleidigungen, Demütigungen oder Ignoranz ihrer Mitmenschen auf und Carrie wird sich der Tatsache bewusst, dass diese mysteriösen Ereignisse von ihr verursacht worden sind. Sie denkt neu über die Beziehung zu ihrer Mutter nach, die alles Körperliche und Sexuelle als grässliche Sünde darstellt und über Jahre verhindert hat, dass Carrie wie ein normales Mädchen aufwachsen konnte. Nachdem ihre Mutter sie vorher häufig hart bestraft hat, gelingt es Carrie, die sich nun ihrer Macht bewusst wird, den Einfluss ihrer Mutter zurückzudrängen.",
@@ -54,7 +54,7 @@ export const initialData = [
     author: "Stephen King",
     title: "Der dunkle Turm",
     subtitle: "Drei",
-    coverImg: "https://covers.openlibrary.org/b/id/1008826-L.jpg",
+    coverImg: "",
     isbn10: "3-453-87557-5",
     teaser:
       "Drei führt die Geschichte von Roland und seiner Suche nach dem Dunklen Turm nahtlos fort. Nachdem der erste Teil der Saga mit einem zehnjährigen Palaver („Unterhaltung“ in der Sprache des Revolvermanns) mit dem „Mann in Schwarz“ endete, findet sich der Revolvermann in Drei am Strand des Westlichen Meeres wieder. Hier kriechen in der Abenddämmerung todbringende Monster-Hummer aus dem Meer und verletzen Roland schwer. Der Revolvermann überlebt ihre Attacke, verliert dabei aber zwei Finger, einen Zeh und erleidet eine Blutvergiftung. Dennoch gelingt es ihm schwer erkrankt, die erste von drei Türen zu finden, die ihm der „Mann in Schwarz“ prophezeit hat.",
