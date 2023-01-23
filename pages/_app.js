@@ -12,7 +12,7 @@ export default function App({ Component, pageProps }) {
         <title>Capstone Project</title>
       </Head>
       <Top bookcounter={bookCounter} />
-      <Component {...pageProps} />
+      <Component {...pageProps} data={initialData} />
     </>
   );
 }
