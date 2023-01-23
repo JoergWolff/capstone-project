@@ -1,6 +1,8 @@
-import CardComponent from "@/components/cardcomponent/CardComponent";
+import CardComponent from "@/components/CardComponent/CardComponent";
+import { initialData } from "@/helpers/data/data";
 
-export default function HomePage({ data }) {
+export default function HomePage() {
+  const data = initialData;
   return (
     <>
       <ul>

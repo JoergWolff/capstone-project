@@ -3,16 +3,16 @@ import styled from "styled-components";
 export default function TopComponent({ bookcounter }) {
   return (
     <>
-      <StyledHead>
+      <StyledHeader>
         <h1>MEDIA DB</h1>
         {bookcounter ? <span>{bookcounter} books</span> : ``}
-      </StyledHead>
+      </StyledHeader>
       <hr />
     </>
   );
 }
 
-const StyledHead = styled.div`
+const StyledHeader = styled.header`
   display: flex;
   flex-direction: row;
   justify-content: space-between;
