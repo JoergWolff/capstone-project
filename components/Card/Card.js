@@ -25,9 +25,8 @@ export default function Card({ coverimage, author, title, subtitle }) {
   );
 }
 
-const StyledCard = styled.div`
+const StyledCard = styled.article`
   display: flex;
-  flex-direction: row;
   margin: var(--main-margin);
   padding: var(--main-card-padding);
   background-color: var(--main-card-background-color);
