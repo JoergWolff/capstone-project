@@ -6,6 +6,9 @@ export default createGlobalStyle`
     --main-background-color: ivory;
     --main-color: brown;
     --main-margin: 10px;
+    // Top
+    --main-top-padding: 10px;
+    --main-top-bottom-border: 1px solid gray;
     // Cards
     --main-card-background-color: white;
     --main-card-border: 1px solid red;
