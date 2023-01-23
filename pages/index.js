@@ -1,4 +1,4 @@
-import CardComponent from "@/components/CardComponent/CardComponent";
+import CardComponent from "@/components/cardcomponent/CardComponent";
 import { initialData } from "@/helpers/data/data";
 
 export default function HomePage() {
