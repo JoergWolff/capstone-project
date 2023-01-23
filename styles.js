@@ -8,7 +8,7 @@ export default createGlobalStyle`
     --main-margin: 10px;
     // Cards
     --main-card-background-color: white;
-    --main-card-border: 1px solid green;
+    --main-card-border: 1px solid red;
     --main-card-border-radius: 20px;
     --main-card-padding: 10px;
   }
