@@ -1,7 +1,7 @@
 import GlobalStyle from "@/styles";
 import Head from "next/head";
 import { initialData } from "@/helpers/data/data";
-import TopComponent from "@/components/topcomponent/TopComponent";
+import Top from "@/components/Top/Top";
 
 export default function App({ Component, pageProps }) {
   const bookCounter = initialData.length;
@@ -11,7 +11,7 @@ export default function App({ Component, pageProps }) {
       <Head>
         <title>Capstone Project</title>
       </Head>
-      <TopComponent bookcounter={bookCounter} />
+      <Top bookcounter={bookCounter} />
       <Component {...pageProps} />
     </>
   );

@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export default function TopComponent({ bookcounter }) {
+export default function Top({ bookcounter }) {
   return (
     <>
       <StyledHeader>
