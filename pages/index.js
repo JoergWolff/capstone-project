@@ -1,4 +1,4 @@
-import CardComponent from "@/components/cardcomponent/CardComponent";
+import Card from "@/components/Card/Card";
 import { initialData } from "@/helpers/data/data";
 
 export default function HomePage() {
@@ -8,7 +8,7 @@ export default function HomePage() {
       <ul>
         {data.map((book) => (
           <li key={book.id}>
-            <CardComponent
+            <Card
               coverimage={book.coverImg}
               author={book.author}
               title={book.title}

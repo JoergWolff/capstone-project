@@ -2,7 +2,7 @@ import Image from "next/image";
 import styled from "styled-components";
 import dummyBook from "../../public/img/dummy/dummy_book.png";
 
-export default function CardComponent({ coverimage, author, title, subtitle }) {
+export default function Card({ coverimage, author, title, subtitle }) {
   return (
     <StyledCard>
       {coverimage ? (
