@@ -19,7 +19,7 @@ export default function Card({ coverimage, author, title, subtitle }) {
       <StyledBookOverview>
         <h2>{author}</h2>
         <h3>{title}</h3>
-        <h3>{subtitle}</h3>
+        <h4>{subtitle}</h4>
       </StyledBookOverview>
     </StyledCard>
   );
