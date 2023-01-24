@@ -1,3 +1,5 @@
+import Link from "next/link";
+import Image from "next/image";
 import Card from "@/components/Card/Card";
 
 export default function HomePage({ data }) {
@@ -5,7 +7,17 @@ export default function HomePage({ data }) {
     <ul>
       {data.map((book) => (
         <li key={book.id}>
-          <Card book={book} />
+          <Card book={book}>
+            <Link href={`/detail/book/${book.id}`}>
+              <Image
+                src="/img/icons/edit.svg"
+                height={30}
+                width={30}
+                alt="edit"
+                className="image_icon_edit"
+              />
+            </Link>
+          </Card>
         </li>
       ))}
     </ul>
