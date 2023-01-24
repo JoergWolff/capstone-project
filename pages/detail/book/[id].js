@@ -1,6 +1,8 @@
 import styled from "styled-components";
 import { useRouter } from "next/router";
+import Link from "next/link";
 import Card from "@/components/Card/Card";
+import Bottom from "@/components/Bottom/Bottom";
 
 export default function DetailBookPage({ data }) {
   const router = useRouter();
@@ -22,6 +24,11 @@ export default function DetailBookPage({ data }) {
         <h4>Teaser:</h4>
         <article>{currentBook.teaser}</article>
       </StyledCard>
+      <Bottom>
+        <Link href={`../../`} className="link_back">
+          Back
+        </Link>
+      </Bottom>
     </>
   );
 }

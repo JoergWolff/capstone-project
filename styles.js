@@ -29,7 +29,8 @@ export default createGlobalStyle`
     background-color: var(--main-background-color);
     color: var(--main-color);
   }
-.image_icon_edit{
+
+.link_edit{
 /*   border: 1px solid black;
   border-radius: 50%; */
   fill: red;
@@ -38,4 +39,13 @@ export default createGlobalStyle`
   right: -70px;
 }
 
+.link_back {
+  border: 1px solid black;
+  border-radius: 5px;
+  padding: 5px;
+  width: 70px;
+  color: brown;
+  text-align: center;
+  text-decoration: none;
+}
 `;

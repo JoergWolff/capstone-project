@@ -14,7 +14,7 @@ export default function HomePage({ data }) {
                 height={30}
                 width={30}
                 alt="edit"
-                className="image_icon_edit"
+                className="link_edit"
               />
             </Link>
           </Card>
