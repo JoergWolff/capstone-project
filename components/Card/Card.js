@@ -1,8 +1,9 @@
+import Link from "next/link";
 import Image from "next/image";
 import styled from "styled-components";
 import dummyBook from "../../public/img/dummy/dummy_book.png";
 
-export default function Card({ coverimage, author, title, subtitle }) {
+export default function Card({ id, coverimage, author, title, subtitle }) {
   return (
     <StyledCard>
       {coverimage ? (
@@ -21,7 +22,7 @@ export default function Card({ coverimage, author, title, subtitle }) {
         <h3>{title}</h3>
         <h4>{subtitle}</h4>
       </StyledBookOverview>
-      <a href="#">
+      <Link href={`/books/${id}`}>
         <Image
           src="/img/icons/edit.svg"
           height={30}
@@ -29,7 +30,7 @@ export default function Card({ coverimage, author, title, subtitle }) {
           alt="edit"
           className="image_icon_edit"
         />
-      </a>
+      </Link>
     </StyledCard>
   );
 }
