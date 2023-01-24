@@ -22,7 +22,7 @@ export default function DetailBookPage({ data }) {
           <span>{currentBook.id}</span>
         </StyledId>
         <h4>Teaser:</h4>
-        <article>{currentBook.teaser}</article>
+        <StyledArticle>{currentBook.teaser}</StyledArticle>
       </StyledCard>
       <Bottom>
         <Link href={`../../`} className="link_back">
@@ -45,4 +45,8 @@ const StyledId = styled.div`
   display: flex;
   justify-content: space-between;
   padding-bottom: 10px;
+`;
+
+const StyledArticle = styled.article`
+  padding-top: 5px;
 `;
