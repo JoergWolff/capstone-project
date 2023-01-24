@@ -3,11 +3,17 @@ import Image from "next/image";
 import styled from "styled-components";
 import dummyBook from "../../public/img/dummy/dummy_book.png";
 
-export default function Card({ id, coverimage, author, title, subtitle }) {
+export default function Card({ book }) {
   return (
     <StyledCard>
-      {coverimage ? (
-        <Image src={coverimage} width={70} height={100} alt={title} priority />
+      {book.coverImg ? (
+        <Image
+          src={book.coverImg}
+          width={70}
+          height={100}
+          alt={book.title}
+          priority
+        />
       ) : (
         <Image
           src={dummyBook}
@@ -18,11 +24,11 @@ export default function Card({ id, coverimage, author, title, subtitle }) {
         />
       )}
       <StyledBookOverview>
-        <h2>{author}</h2>
-        <h3>{title}</h3>
-        <h4>{subtitle}</h4>
+        <h2>{book.author}</h2>
+        <h3>{book.title}</h3>
+        <h4>{book.subtitle}</h4>
       </StyledBookOverview>
-      <Link href={`/detail/book/${id}`}>
+      <Link href={`/detail/book/${book.id}`}>
         <Image
           src="/img/icons/edit.svg"
           height={30}
