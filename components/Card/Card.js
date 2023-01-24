@@ -21,6 +21,15 @@ export default function Card({ coverimage, author, title, subtitle }) {
         <h3>{title}</h3>
         <h4>{subtitle}</h4>
       </StyledBookOverview>
+      <a href="#">
+        <Image
+          src="/img/icons/edit.svg"
+          height={30}
+          width={30}
+          alt="edit"
+          className="image_icon_edit"
+        />
+      </a>
     </StyledCard>
   );
 }

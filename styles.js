@@ -29,4 +29,13 @@ export default createGlobalStyle`
     background-color: var(--main-background-color);
     color: var(--main-color);
   }
+.image_icon_edit{
+/*   border: 1px solid black;
+  border-radius: 50%; */
+  fill: red;
+  position: relative;
+  bottom: -70px;
+  right: -70px;
+}
+
 `;

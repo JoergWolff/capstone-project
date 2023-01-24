@@ -9,7 +9,7 @@ export default function App({ Component, pageProps }) {
     <>
       <GlobalStyle />
       <Head>
-        <title>Capstone Project</title>
+        <title>Capstone Project Media DB</title>
       </Head>
       <Top bookcounter={bookCounter} />
       <Component {...pageProps} data={initialData} />
