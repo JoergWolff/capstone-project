@@ -4,7 +4,7 @@ export default function Top({ bookcounter }) {
   return (
     <StyledHeader>
       <h1>MEDIA DB</h1>
-      {bookcounter && <span>{bookcounter}</span>}
+      {bookcounter && <span>{bookcounter} books</span>}
     </StyledHeader>
   );
 }

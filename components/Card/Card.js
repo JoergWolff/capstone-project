@@ -22,7 +22,7 @@ export default function Card({ id, coverimage, author, title, subtitle }) {
         <h3>{title}</h3>
         <h4>{subtitle}</h4>
       </StyledBookOverview>
-      <Link href={`/books/${id}`}>
+      <Link href={`/detail/book/${id}`}>
         <Image
           src="/img/icons/edit.svg"
           height={30}
