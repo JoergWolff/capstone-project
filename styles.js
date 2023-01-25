@@ -33,22 +33,17 @@ export default createGlobalStyle`
     color: var(--main-color);
   }
 
-.link_edit{
-/*   border: 1px solid black;
-  border-radius: 50%; */
-  fill: red;
-  position: relative;
-  bottom: -70px;
-  right: -70px;
-}
+  .link_edit{
+    border: 1px solid black;
+  }
 
-.link_back {
-  border: 1px solid black;
-  border-radius: 5px;
-  padding: 5px;
-  width: 70px;
-  color: brown;
-  text-align: center;
-  text-decoration: none;
-}
+  .link_back {
+    border: 1px solid black;
+    border-radius: 5px;
+    padding: 5px;
+    width: 70px;
+    color: brown;
+    text-align: center;
+    text-decoration: none;
+  }
 `;

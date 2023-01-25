@@ -27,14 +27,15 @@ export default function Card({ children, book }) {
         <h3>{book.title}</h3>
         <h4>{book.subtitle}</h4>
       </StyledBookOverview>
-      {/* children for the edit link on a card*/}
-      {children}
+      <StyledChildren>{children}</StyledChildren>
     </StyledCard>
   );
 }
 
 const StyledCard = styled.article`
   display: flex;
+  justify-content: space-between;
+  gap: 5px;
   margin: var(--main-margin);
   padding: var(--main-card-padding);
   background-color: var(--main-card-background-color);
@@ -43,5 +44,12 @@ const StyledCard = styled.article`
 `;
 
 const StyledBookOverview = styled.div`
+  width: 65%;
   padding: 0px 0px 0px 10px;
+`;
+
+const StyledChildren = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
 `;

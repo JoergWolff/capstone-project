@@ -3,9 +3,10 @@ export const initialData = [
     id: 1,
     isActive: true,
     type: "book",
-    author: "Stephen King",
-    title: "Feuerkind",
-    subtitle: "",
+    author:
+      "Stephen King... und wenn jetzt hier ein langer Text steht, der womöglich noch länger wird.",
+    title: "Feuerkind hat auch einen ziemlich langen Title.",
+    subtitle: "Leider hat Feuerkind keinen Subtitle.",
     coverImg: "https://covers.openlibrary.org/b/id/10137891-L.jpg",
     isbn10: "3-453-43273-8",
     teaser:
