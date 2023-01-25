@@ -12,11 +12,11 @@ export default function HomePage({ data }) {
             <Card book={book}>
               <Link href={`/detail/book/${book.id}`}>
                 <Image
-                  src="/img/icons/edit.svg"
+                  src="/img/icons/info.svg"
                   height={30}
                   width={30}
-                  alt="edit"
-                  className="link_edit"
+                  alt="info"
+                  className="link_info"
                 />
               </Link>
             </Card>

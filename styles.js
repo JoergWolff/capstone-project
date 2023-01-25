@@ -33,7 +33,7 @@ export default createGlobalStyle`
     color: var(--main-color);
   }
 
-  .link_edit{
+  .link_info{
     border: 1px solid black;
   }
 
