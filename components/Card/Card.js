@@ -27,6 +27,7 @@ export default function Card({ children, book }) {
         <h3>{book.title}</h3>
         <h4>{book.subtitle}</h4>
       </StyledBookOverview>
+      {/* children for the edit link on a card*/}
       {children}
     </StyledCard>
   );
