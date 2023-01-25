@@ -32,18 +32,4 @@ export default createGlobalStyle`
     background-color: var(--main-background-color);
     color: var(--main-color);
   }
-
-  .link_info{
-    border: 1px solid black;
-  }
-
-  .link_back {
-    border: 1px solid black;
-    border-radius: 5px;
-    padding: 5px;
-    width: 70px;
-    color: brown;
-    text-align: center;
-    text-decoration: none;
-  }
 `;

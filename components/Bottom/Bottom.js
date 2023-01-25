@@ -6,9 +6,9 @@ export default function Bottom({ children }) {
 
 const StyledBottom = styled.footer`
   position: fixed;
-  right: 0px;
-  bottom: 0px;
-  left: 0px;
+  right: 0;
+  bottom: 0;
+  left: 0;
   display: flex;
   justify-content: space-between;
   padding: var(--main-top-padding);

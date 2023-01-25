@@ -45,7 +45,7 @@ const StyledCard = styled.article`
 
 const StyledBookOverview = styled.div`
   width: 65%;
-  padding: 0px 0px 0px 10px;
+  padding: 0 0 0 10px;
 `;
 
 const StyledChildren = styled.div`

@@ -11,12 +11,11 @@ export default function HomePage({ data }) {
           <li key={book.id}>
             <Card book={book}>
               <Link href={`/detail/book/${book.id}`}>
-                <Image
+                <StyledImage
                   src="/img/icons/info.svg"
                   height={30}
                   width={30}
                   alt="info"
-                  className="link_info"
                 />
               </Link>
             </Card>
@@ -30,8 +29,12 @@ export default function HomePage({ data }) {
 const StyledHome = styled.div`
   position: absolute;
   top: var(--main-content-top);
-  right: 0px;
-  bottom: 0px;
-  left: 0px;
+  right: 0;
+  bottom: 0;
+  left: 0;
   overflow: scroll;
+`;
+
+const StyledImage = styled(Image)`
+  border: 1px solid black;
 `;
