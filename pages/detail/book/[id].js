@@ -14,7 +14,7 @@ export default function DetailBookPage({ data }) {
     return <h1>404 An error occured...</h1>;
   }
   return (
-    <>
+    <StyledDetail>
       <Card book={currentBook} />
       <StyledCard>
         <StyledId>
@@ -29,9 +29,18 @@ export default function DetailBookPage({ data }) {
           Back
         </Link>
       </Bottom>
-    </>
+    </StyledDetail>
   );
 }
+
+const StyledDetail = styled.div`
+  position: absolute;
+  top: var(--main-content-top);
+  right: 0px;
+  bottom: var(--main-content-bottom);
+  left: 0px;
+  overflow: scroll;
+`;
 
 const StyledCard = styled.div`
   margin: var(--main-margin);

@@ -9,11 +9,14 @@ export default createGlobalStyle`
     // Top
     --main-top-padding: 10px;
     --main-top-bottom-border: 1px solid gray;
-    // Cards
+    // Card
     --main-card-background-color: white;
     --main-card-border: 1px solid red;
     --main-card-border-radius: 20px;
     --main-card-padding: 10px;
+    // Positioning
+    --main-content-top: 60px;
+    --main-content-bottom: 55px;
   }
   
   *,
