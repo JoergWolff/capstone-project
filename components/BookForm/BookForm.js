@@ -29,8 +29,7 @@ export default function BookForm({ book }) {
             defaultValue={book?.coverImg}
             type="text"
             id="url-input"
-            rows="5"
-            cols="33"
+            rows="4"
           />
         </StyledUrl>
       </StyledTopForm>
@@ -65,4 +64,5 @@ const StyledUrl = styled.div`
   display: flex;
   flex-direction: column;
   padding-left: 10px;
+  width: 100%;
 `;

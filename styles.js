@@ -35,4 +35,21 @@ export default createGlobalStyle`
     background-color: var(--main-background-color);
     color: var(--main-color);
   }
+
+  label {
+    margin-top: 5px;
+  }
+
+  input {
+    border: 1px solid red;
+    border-radius: 5px;
+    padding: 5px;
+  }
+
+  textarea {
+    border: 1px solid red;
+    border-radius: 5px;
+    padding: 5px;
+    resize: none;
+  }
 `;
