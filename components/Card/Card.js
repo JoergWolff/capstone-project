@@ -2,11 +2,17 @@ import Image from "next/image";
 import styled from "styled-components";
 import dummyBook from "../../public/img/dummy/dummy_book.png";
 
-export default function Card({ coverimage, author, title, subtitle }) {
+export default function Card({ children, book }) {
   return (
     <StyledCard>
-      {coverimage ? (
-        <Image src={coverimage} width={70} height={100} alt={title} priority />
+      {book.coverImg ? (
+        <Image
+          src={book.coverImg}
+          width={70}
+          height={100}
+          alt={book.title}
+          priority
+        />
       ) : (
         <Image
           src={dummyBook}
@@ -17,16 +23,19 @@ export default function Card({ coverimage, author, title, subtitle }) {
         />
       )}
       <StyledBookOverview>
-        <h2>{author}</h2>
-        <h3>{title}</h3>
-        <h4>{subtitle}</h4>
+        <h2>{book.author}</h2>
+        <h3>{book.title}</h3>
+        <h4>{book.subtitle}</h4>
       </StyledBookOverview>
+      <StyledChildren>{children}</StyledChildren>
     </StyledCard>
   );
 }
 
 const StyledCard = styled.article`
   display: flex;
+  justify-content: space-between;
+  gap: 5px;
   margin: var(--main-margin);
   padding: var(--main-card-padding);
   background-color: var(--main-card-background-color);
@@ -35,5 +44,12 @@ const StyledCard = styled.article`
 `;
 
 const StyledBookOverview = styled.div`
-  padding: 0px 0px 0px 10px;
+  width: 65%;
+  padding-left: 10px;
+`;
+
+const StyledChildren = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
 `;
