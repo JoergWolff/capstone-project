@@ -1,3 +1,3 @@
-export default function BookForm() {
+export default function BookForm({ book }) {
   return <h1>BookForm</h1>;
 }

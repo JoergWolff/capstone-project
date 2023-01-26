@@ -26,6 +26,9 @@ export default function DetailBookPage({ data }) {
       </StyledCard>
       <Bottom>
         <StyledLink href={`/`}>Back</StyledLink>
+        <StyledLink href={`/detail/book/${currentBook.id}/edit`}>
+          Edit
+        </StyledLink>
       </Bottom>
     </StyledDetail>
   );

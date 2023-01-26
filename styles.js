@@ -7,6 +7,7 @@ export default createGlobalStyle`
     --main-color: brown;
     --main-margin: 10px;
     // Top
+    --main-top-background-color: ivory;
     --main-top-padding: 10px;
     --main-top-bottom-border: 1px solid gray;
     // Card
@@ -14,6 +15,8 @@ export default createGlobalStyle`
     --main-card-border: 1px solid red;
     --main-card-border-radius: 20px;
     --main-card-padding: 10px;
+    // Bottom
+    --main-bottom-background-color: ivory;
     // Positioning
     --main-content-top: 60px;
     --main-content-bottom: 55px;
