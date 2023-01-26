@@ -10,7 +10,7 @@ export default function HomePage({ data }) {
         {data.map((book) => (
           <li key={book.id}>
             <Card book={book}>
-              <Link href={`/detail/book/${book.id}`}>
+              <Link href={`/detail/book/${book.id}/detail`}>
                 <StyledImage
                   src="/img/icons/info.svg"
                   height={30}
