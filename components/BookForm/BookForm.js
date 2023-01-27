@@ -23,15 +23,6 @@ export default function BookForm({ book }) {
             priority
           />
         )}
-        <StyledUrl>
-          <label htmlFor="url-input">URL:</label>
-          <textarea
-            defaultValue={book?.coverImg}
-            type="text"
-            id="url-input"
-            rows="4"
-          />
-        </StyledUrl>
       </StyledTopForm>
 
       <label htmlFor="author-input">Author:</label>
@@ -58,11 +49,4 @@ const StyledForm = styled.form`
 const StyledTopForm = styled.div`
   display: flex;
   flex-direction: row;
-`;
-
-const StyledUrl = styled.div`
-  display: flex;
-  flex-direction: column;
-  padding-left: 10px;
-  width: 100%;
 `;
