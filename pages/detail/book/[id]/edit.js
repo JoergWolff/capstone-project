@@ -24,7 +24,9 @@ export default function EditBookPage({ data }) {
           Back
         </StyledLink>
         <StyledLink href={`/`}>Home</StyledLink>
-        <StyledButton>Save</StyledButton>
+        <StyledButton type="submit" form="book-form">
+          Save
+        </StyledButton>
       </Bottom>
     </>
   );
