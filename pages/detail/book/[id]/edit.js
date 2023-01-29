@@ -4,7 +4,7 @@ import styled from "styled-components";
 import BookForm from "@/components/BookForm/BookForm";
 import Bottom from "@/components/Bottom/Bottom";
 
-export default function EditBookPage({ data, onSubmit }) {
+export default function EditBookPage({ data, onEditSubmit }) {
   const router = useRouter();
   const { id } = router.query;
 
@@ -17,7 +17,7 @@ export default function EditBookPage({ data, onSubmit }) {
   return (
     <>
       <StyledEdit>
-        <BookForm book={currentBook} onSubmit={onSubmit} />
+        <BookForm book={currentBook} onEditSubmit={onEditSubmit} />
       </StyledEdit>
       <Bottom>
         <StyledLink href={`/detail/book/${currentBook.id}/detail`}>

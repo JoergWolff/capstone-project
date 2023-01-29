@@ -13,7 +13,7 @@ export default function App({ Component, pageProps }) {
 
   const bookCounter = books.length;
 
-  function handleSubmit(currentBook) {
+  function editBook(currentBook) {
     setBooks(
       books.map((book) =>
         book.id === currentBook.id
@@ -37,7 +37,7 @@ export default function App({ Component, pageProps }) {
         <title>Capstone Project Media DB</title>
       </Head>
       <Top bookcounter={bookCounter} />
-      <Component {...pageProps} data={books} onSubmit={handleSubmit} />
+      <Component {...pageProps} data={books} onEditSubmit={editBook} />
     </>
   );
 }
