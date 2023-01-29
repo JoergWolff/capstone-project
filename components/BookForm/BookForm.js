@@ -2,9 +2,17 @@ import Image from "next/image";
 import styled from "styled-components";
 import dummyBook from "../../public/img/dummy/dummy_book.png";
 
-export default function BookForm({ book }) {
+export default function BookForm({ book, onSubmit }) {
+  function handleSubmit(event) {
+    event.preventDefault();
+    const formData = new FormData(event.target);
+    const data = Object.fromEntries(formData);
+
+    onSubmit(data);
+  }
+
   return (
-    <StyledForm>
+    <StyledForm onSubmit={handleSubmit} id="book-form">
       <StyledTopForm>
         {book.coverImg ? (
           <Image
@@ -24,18 +32,57 @@ export default function BookForm({ book }) {
           />
         )}
       </StyledTopForm>
+      <input
+        defaultValue={book?.id}
+        type="text"
+        id="id-input"
+        name="id"
+        hidden
+      />
+
+      <input
+        defaultValue={book?.coverImg}
+        type="text"
+        id="coverImg-input"
+        name="coverImg"
+        hidden
+      />
 
       <label htmlFor="author-input">Author:</label>
-      <input defaultValue={book?.author} type="text" id="author-input" />
+      <input
+        defaultValue={book?.author}
+        type="text"
+        id="author-input"
+        name="author"
+        maxLength={30}
+      />
 
       <label htmlFor="title-input">Title:</label>
-      <input defaultValue={book?.title} type="text" id="title-input" />
+      <input
+        defaultValue={book?.title}
+        type="text"
+        id="title-input"
+        name="title"
+        maxLength={30}
+      />
 
       <label htmlFor="subtitle-input">Subtitle:</label>
-      <input defaultValue={book?.subtitle} type="text" id="subtitle-input" />
+      <input
+        defaultValue={book?.subtitle}
+        type="text"
+        id="subtitle-input"
+        name="subtitle"
+        maxLength={30}
+      />
 
       <label htmlFor="teaser-input">Teaser:</label>
-      <textarea defaultValue={book?.teaser} id="teaser-input" rows="20" />
+      <textarea
+        defaultValue={book?.teaser}
+        id="teaser-input"
+        rows="20"
+        name="teaser"
+        maxLength={300}
+      />
     </StyledForm>
   );
 }

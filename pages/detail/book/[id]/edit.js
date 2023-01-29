@@ -4,11 +4,11 @@ import styled from "styled-components";
 import BookForm from "@/components/BookForm/BookForm";
 import Bottom from "@/components/Bottom/Bottom";
 
-export default function EditBookPage({ data }) {
+export default function EditBookPage({ data, onSubmit }) {
   const router = useRouter();
   const { id } = router.query;
 
-  const currentBook = data.find((book) => book.id === parseInt(id));
+  const currentBook = data.find((book) => book.id === id);
 
   if (!currentBook) {
     return <h1>404 An error occured...</h1>;
@@ -17,7 +17,7 @@ export default function EditBookPage({ data }) {
   return (
     <>
       <StyledEdit>
-        <BookForm book={currentBook} />
+        <BookForm book={currentBook} onSubmit={onSubmit} />
       </StyledEdit>
       <Bottom>
         <StyledLink href={`/detail/book/${currentBook.id}/detail`}>
@@ -42,21 +42,21 @@ const StyledEdit = styled.div`
 `;
 
 const StyledLink = styled(Link)`
-  border: 1px solid black;
-  border-radius: 5px;
-  padding: 5px;
-  width: 70px;
-  color: brown;
+  border: var(--main-link-button-border);
+  border-radius: var(--main-link-button-border-radius);
+  padding: var(--main-link-button-padding);
+  width: var(--main-link-button-width);
+  color: var(--main-link-button-color);
   text-align: center;
   text-decoration: none;
 `;
 
 const StyledButton = styled.button`
-  border: 1px solid black;
-  border-radius: 5px;
-  padding: 5px;
-  width: 70px;
-  color: brown;
+  border: var(--main-link-button-border);
+  border-radius: var(--main-link-button-border-radius);
+  padding: var(--main-link-button-padding);
+  width: var(--main-link-button-width);
+  color: var(--main-link-button-color);
   text-align: center;
   background-color: var(--main-bottom-background-color);
 `;

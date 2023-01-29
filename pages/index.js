@@ -2,7 +2,6 @@ import Link from "next/link";
 import Image from "next/image";
 import styled from "styled-components";
 import Card from "@/components/Card/Card";
-import Bottom from "@/components/Bottom/Bottom";
 
 export default function HomePage({ data }) {
   return (
@@ -37,5 +36,5 @@ const StyledHome = styled.div`
 `;
 
 const StyledImage = styled(Image)`
-  border: 1px solid black;
+  border: var(--main-link-button-border);
 `;

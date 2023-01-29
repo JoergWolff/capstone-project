@@ -6,6 +6,9 @@ export default createGlobalStyle`
     --main-background-color: ivory;
     --main-color: brown;
     --main-margin: 10px;
+    // Positioning
+    --main-content-top: 60px;
+    --main-content-bottom: 55px;
     // Top
     --main-top-background-color: ivory;
     --main-top-padding: 10px;
@@ -17,9 +20,13 @@ export default createGlobalStyle`
     --main-card-padding: 10px;
     // Bottom
     --main-bottom-background-color: ivory;
-    // Positioning
-    --main-content-top: 60px;
-    --main-content-bottom: 55px;
+    // Links-Buttons
+    --main-link-button-width: 70px;
+    --main-link-button-padding: 5px;
+    --main-link-button-border: 1px solid red;
+    --main-link-button-border-radius: 5px;
+    --main-link-button-color: brown;
+
   }
   
   *,
