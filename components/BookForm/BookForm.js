@@ -54,7 +54,7 @@ export default function BookForm({ book, onEditSubmit }) {
         type="text"
         id="author-input"
         name="author"
-        maxLength={30}
+        maxLength={40}
       />
 
       <label htmlFor="title-input">Title:</label>
@@ -63,7 +63,7 @@ export default function BookForm({ book, onEditSubmit }) {
         type="text"
         id="title-input"
         name="title"
-        maxLength={30}
+        maxLength={40}
       />
 
       <label htmlFor="subtitle-input">Subtitle:</label>
@@ -72,7 +72,7 @@ export default function BookForm({ book, onEditSubmit }) {
         type="text"
         id="subtitle-input"
         name="subtitle"
-        maxLength={30}
+        maxLength={40}
       />
 
       <label htmlFor="teaser-input">Teaser:</label>
@@ -81,7 +81,7 @@ export default function BookForm({ book, onEditSubmit }) {
         id="teaser-input"
         rows="20"
         name="teaser"
-        maxLength={300}
+        maxLength={500}
       />
     </StyledForm>
   );
