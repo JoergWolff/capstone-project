@@ -43,6 +43,10 @@ export default createGlobalStyle`
     color: var(--main-color);
   }
 
+  h1, h2, h3, h4 ,h5, h6 {
+  word-wrap: break-word;
+}
+
   label {
     margin-top: 5px;
   }
