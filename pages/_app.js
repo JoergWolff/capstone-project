@@ -38,7 +38,6 @@ export default function App({ Component, pageProps }) {
       isbn10: "",
       type: "book",
     };
-    console.log(newBook);
     setBooks([newBook, ...books]);
 
     router.push(`/`);
