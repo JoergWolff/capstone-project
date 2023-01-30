@@ -19,7 +19,7 @@ export default function DetailBookPage({ data }) {
       <StyledCard>
         <StyledId>
           <span>ID:</span>
-          <span>{currentBook.id}</span>
+          <span>{currentBook.internalId}</span>
         </StyledId>
         <h4>Teaser:</h4>
         <StyledArticle>{currentBook.teaser}</StyledArticle>

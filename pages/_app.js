@@ -2,6 +2,7 @@ import GlobalStyle from "@/styles";
 import Head from "next/head";
 import useLocalStorageState from "use-local-storage-state";
 import { useRouter } from "next/router";
+import { v4 } from "uuid";
 import { initialData } from "@/helpers/data/data";
 import Top from "@/components/Top/Top";
 
@@ -33,7 +34,8 @@ export default function App({ Component, pageProps }) {
   function handleNewBook(currentBook) {
     const newBook = {
       ...currentBook,
-      id: String(bookCounter + 1),
+      id: v4(),
+      internalId: String(bookCounter + 1),
       isActive: true,
       isbn10: "",
       type: "book",
