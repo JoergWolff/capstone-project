@@ -9,7 +9,7 @@ export default function CreateBookPage({ onNewSubmit }) {
       <BookForm onNewSubmit={onNewSubmit} />
       <Bottom>
         <StyledLinkPlaceholder />
-        <StyledLink href={"/"}>Home</StyledLink>
+        <StyledLink href="/">Home</StyledLink>
         <StyledButton type="submit" form="book-form">
           Save
         </StyledButton>
