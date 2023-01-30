@@ -30,6 +30,20 @@ export default function App({ Component, pageProps }) {
     router.push(`/detail/book/${currentBook.id}/detail`);
   }
 
+  function newBook(currentBook) {
+    const newBook = {
+      ...currentBook,
+      id: String(bookCounter + 1),
+      isActive: true,
+      isbn10: "",
+      type: "book",
+    };
+    console.log(newBook);
+    setBooks([newBook, ...books]);
+
+    router.push(`/`);
+  }
+
   return (
     <>
       <GlobalStyle />
@@ -37,7 +51,12 @@ export default function App({ Component, pageProps }) {
         <title>Capstone Project Media DB</title>
       </Head>
       <Top bookcounter={bookCounter} />
-      <Component {...pageProps} data={books} onEditSubmit={editBook} />
+      <Component
+        {...pageProps}
+        data={books}
+        onEditSubmit={editBook}
+        onNewSubmit={newBook}
+      />
     </>
   );
 }
