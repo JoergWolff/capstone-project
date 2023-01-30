@@ -2,21 +2,24 @@ import Image from "next/image";
 import styled from "styled-components";
 import dummyBook from "../../public/img/dummy/dummy_book.png";
 
-export default function BookForm({ book, onEditSubmit }) {
+export default function BookForm({ book, onEditSubmit, onNewSubmit }) {
   function handleSubmit(event) {
     event.preventDefault();
     const formData = new FormData(event.target);
     const data = Object.fromEntries(formData);
-
-    onEditSubmit(data);
+    if (book) {
+      onEditSubmit(data);
+    } else {
+      onNewSubmit(data);
+    }
   }
 
   return (
     <StyledForm onSubmit={handleSubmit} id="book-form">
       <StyledTopForm>
-        {book.coverImg ? (
+        {book?.coverImg ? (
           <Image
-            src={book.coverImg}
+            src={book?.coverImg}
             width={70}
             height={100}
             alt={book.title}
