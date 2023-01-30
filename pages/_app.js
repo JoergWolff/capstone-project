@@ -13,7 +13,7 @@ export default function App({ Component, pageProps }) {
 
   const bookCounter = books.length;
 
-  function editBook(currentBook) {
+  function handleEditBook(currentBook) {
     setBooks(
       books.map((book) =>
         book.id === currentBook.id
@@ -30,7 +30,7 @@ export default function App({ Component, pageProps }) {
     router.push(`/detail/book/${currentBook.id}/detail`);
   }
 
-  function newBook(currentBook) {
+  function handleNewBook(currentBook) {
     const newBook = {
       ...currentBook,
       id: String(bookCounter + 1),
@@ -54,8 +54,8 @@ export default function App({ Component, pageProps }) {
       <Component
         {...pageProps}
         data={books}
-        onEditSubmit={editBook}
-        onNewSubmit={newBook}
+        onEditSubmit={handleEditBook}
+        onNewSubmit={handleNewBook}
       />
     </>
   );
