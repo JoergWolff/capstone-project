@@ -13,6 +13,6 @@ const StyledBottom = styled.footer`
   justify-content: space-between;
   padding: var(--main-top-padding);
   border-top: var(--main-top-bottom-border);
-  background-color: var(--main-background-color);
+  background-color: var(--main-bottom-background-color);
   z-index: 2;
 `;

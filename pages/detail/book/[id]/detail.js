@@ -8,7 +8,7 @@ export default function DetailBookPage({ data }) {
   const router = useRouter();
   const { id } = router.query;
 
-  const currentBook = data.find((book) => book.id === parseInt(id));
+  const currentBook = data.find((book) => book.id === id);
 
   if (!currentBook) {
     return <h1>404 An error occured...</h1>;
@@ -25,7 +25,11 @@ export default function DetailBookPage({ data }) {
         <StyledArticle>{currentBook.teaser}</StyledArticle>
       </StyledCard>
       <Bottom>
-        <StyledLink href={`/`}>Back</StyledLink>
+        <StyledLinkPlaceholder></StyledLinkPlaceholder>
+        <StyledLink href={`/`}>Home</StyledLink>
+        <StyledLink href={`/detail/book/${currentBook.id}/edit`}>
+          Edit
+        </StyledLink>
       </Bottom>
     </StyledDetail>
   );
@@ -59,11 +63,15 @@ const StyledArticle = styled.article`
 `;
 
 const StyledLink = styled(Link)`
-  border: 1px solid black;
-  border-radius: 5px;
-  padding: 5px;
-  width: 70px;
-  color: brown;
+  border: var(--main-link-button-border);
+  border-radius: var(--main-link-button-border-radius);
+  padding: var(--main-link-button-padding);
+  width: var(--main-link-button-width);
+  color: var(--main-link-button-color);
   text-align: center;
   text-decoration: none;
+`;
+
+const StyledLinkPlaceholder = styled.div`
+  width: var(--main-link-button-width);
 `;

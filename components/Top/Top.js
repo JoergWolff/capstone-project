@@ -18,6 +18,6 @@ const StyledHeader = styled.header`
   justify-content: space-between;
   padding: var(--main-top-padding);
   border-bottom: var(--main-top-bottom-border);
-  background-color: var(--main-background-color);
+  background-color: var(--main-top-background-color);
   z-index: 1;
 `;
