@@ -27,7 +27,7 @@ export default function HomePage({ data }) {
       </StyledHome>
       <Bottom>
         <StyledLinkPlaceholder />
-        <StyledLink href={`/book/create`}>New</StyledLink>
+        <StyledLink href="/book/create">New</StyledLink>
       </Bottom>
     </>
   );
