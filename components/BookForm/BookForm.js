@@ -55,6 +55,7 @@ export default function BookForm({ book, onEditSubmit }) {
         id="author-input"
         name="author"
         maxLength={40}
+        required
       />
 
       <label htmlFor="title-input">Title:</label>
@@ -64,6 +65,7 @@ export default function BookForm({ book, onEditSubmit }) {
         id="title-input"
         name="title"
         maxLength={40}
+        required
       />
 
       <label htmlFor="subtitle-input">Subtitle:</label>
