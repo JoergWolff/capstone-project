@@ -2,16 +2,12 @@ import Image from "next/image";
 import styled from "styled-components";
 import dummyBook from "../../public/img/dummy/dummy_book.png";
 
-export default function BookForm({ book, onEditSubmit, onNewSubmit }) {
+export default function BookForm({ book, onSubmit }) {
   function handleSubmit(event) {
     event.preventDefault();
     const formData = new FormData(event.target);
     const data = Object.fromEntries(formData);
-    if (book) {
-      onEditSubmit(data);
-    } else {
-      onNewSubmit(data);
-    }
+    onSubmit(data);
   }
 
   return (
