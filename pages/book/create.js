@@ -6,7 +6,7 @@ import Bottom from "@/components/Bottom/Bottom";
 export default function CreateBookPage({ onNewSubmit }) {
   return (
     <StyledMain>
-      <BookForm onNewSubmit={onNewSubmit} />
+      <BookForm onSubmit={onNewSubmit} />
       <Bottom>
         <StyledLinkPlaceholder />
         <StyledLink href="/">Home</StyledLink>
