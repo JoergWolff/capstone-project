@@ -13,23 +13,13 @@ export default function BookForm({ book, onSubmit }) {
   return (
     <StyledForm onSubmit={handleSubmit} id="book-form">
       <StyledTopForm>
-        {book?.coverImg ? (
-          <Image
-            src={book?.coverImg}
-            width={70}
-            height={100}
-            alt={book.title}
-            priority
-          />
-        ) : (
-          <Image
-            src={dummyBook}
-            width={70}
-            height={100}
-            alt="No picture"
-            priority
-          />
-        )}
+        <Image
+          src={!book === "" ? book.coverImg : dummyBook}
+          width={70}
+          height={100}
+          alt={!book === "" ? book.title : "No Picture"}
+          priority
+        />
       </StyledTopForm>
       <input
         defaultValue={book?.id}
