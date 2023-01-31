@@ -1,38 +1,24 @@
 import Link from "next/link";
-import { useRouter } from "next/router";
 import styled from "styled-components";
 import BookForm from "@/components/BookForm/BookForm";
 import Navigation from "@/components/Navigation/Navigation";
 
-export default function EditBookPage({ data, onEditSubmit }) {
-  const router = useRouter();
-  const { id } = router.query;
-
-  const currentBook = data.find((book) => book.id === id);
-
-  if (!currentBook) {
-    return <h1>404 An error occured...</h1>;
-  }
-
+export default function CreateBookPage({ onNewSubmit }) {
   return (
-    <>
-      <StyledEdit>
-        <BookForm book={currentBook} onSubmit={onEditSubmit} />
-      </StyledEdit>
+    <StyledMain>
+      <BookForm onSubmit={onNewSubmit} />
       <Navigation>
-        <StyledLink href={`/detail/book/${currentBook.id}/detail`}>
-          Back
-        </StyledLink>
-        <StyledLink href={`/`}>Home</StyledLink>
+        <StyledLinkPlaceholder />
+        <StyledLink href="/">Home</StyledLink>
         <StyledButton type="submit" form="book-form">
           Save
         </StyledButton>
       </Navigation>
-    </>
+    </StyledMain>
   );
 }
 
-const StyledEdit = styled.div`
+const StyledMain = styled.div`
   position: absolute;
   top: var(--main-content-top);
   right: 0;
@@ -59,4 +45,8 @@ const StyledButton = styled.button`
   color: var(--main-link-button-color);
   text-align: center;
   background-color: var(--main-bottom-background-color);
+`;
+
+const StyledLinkPlaceholder = styled.div`
+  width: var(--main-link-button-width);
 `;

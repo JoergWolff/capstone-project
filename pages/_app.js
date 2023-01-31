@@ -2,6 +2,7 @@ import GlobalStyle from "@/styles";
 import Head from "next/head";
 import useLocalStorageState from "use-local-storage-state";
 import { useRouter } from "next/router";
+import { v4 } from "uuid";
 import { initialData } from "@/helpers/data/data";
 import Top from "@/components/Top/Top";
 
@@ -13,7 +14,7 @@ export default function App({ Component, pageProps }) {
 
   const bookCounter = books.length;
 
-  function editBook(currentBook) {
+  function handleEditBook(currentBook) {
     setBooks(
       books.map((book) =>
         book.id === currentBook.id
@@ -30,6 +31,20 @@ export default function App({ Component, pageProps }) {
     router.push(`/detail/book/${currentBook.id}/detail`);
   }
 
+  function handleNewBook(currentBook) {
+    const newBook = {
+      ...currentBook,
+      id: v4(),
+      internalId: String(bookCounter + 1),
+      isActive: true,
+      isbn10: "",
+      type: "book",
+    };
+    setBooks([newBook, ...books]);
+
+    router.push(`/`);
+  }
+
   return (
     <>
       <GlobalStyle />
@@ -37,7 +52,12 @@ export default function App({ Component, pageProps }) {
         <title>Capstone Project Media DB</title>
       </Head>
       <Top bookcounter={bookCounter} />
-      <Component {...pageProps} data={books} onEditSubmit={editBook} />
+      <Component
+        {...pageProps}
+        data={books}
+        onEditSubmit={handleEditBook}
+        onNewSubmit={handleNewBook}
+      />
     </>
   );
 }
