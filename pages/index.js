@@ -2,7 +2,7 @@ import Link from "next/link";
 import Image from "next/image";
 import styled from "styled-components";
 import Card from "@/components/Card/Card";
-import Bottom from "@/components/Bottom/Bottom";
+import Navigation from "@/components/Navigation/Navigation";
 
 export default function HomePage({ data }) {
   return (
@@ -25,10 +25,10 @@ export default function HomePage({ data }) {
           ))}
         </ul>
       </StyledHome>
-      <Bottom>
+      <Navigation>
         <StyledLinkPlaceholder />
         <StyledLink href="/book/create">New</StyledLink>
-      </Bottom>
+      </Navigation>
     </>
   );
 }

@@ -1,19 +1,19 @@
 import Link from "next/link";
 import styled from "styled-components";
 import BookForm from "@/components/BookForm/BookForm";
-import Bottom from "@/components/Bottom/Bottom";
+import Navigation from "@/components/Navigation/Navigation";
 
 export default function CreateBookPage({ onNewSubmit }) {
   return (
     <StyledMain>
       <BookForm onSubmit={onNewSubmit} />
-      <Bottom>
+      <Navigation>
         <StyledLinkPlaceholder />
         <StyledLink href="/">Home</StyledLink>
         <StyledButton type="submit" form="book-form">
           Save
         </StyledButton>
-      </Bottom>
+      </Navigation>
     </StyledMain>
   );
 }
