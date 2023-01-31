@@ -17,7 +17,7 @@ export default function EditBookPage({ data, onEditSubmit }) {
   return (
     <>
       <StyledEdit>
-        <BookForm book={currentBook} onEditSubmit={onEditSubmit} />
+        <BookForm book={currentBook} onSubmit={onEditSubmit} />
       </StyledEdit>
       <Bottom>
         <StyledLink href={`/detail/book/${currentBook.id}/detail`}>
