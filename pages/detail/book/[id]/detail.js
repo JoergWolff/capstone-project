@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import { useRouter } from "next/router";
 import Link from "next/link";
+import Image from "next/image";
 import Card from "@/components/Card/Card";
 import Navigation from "@/components/Navigation/Navigation";
 
@@ -13,9 +14,20 @@ export default function DetailBookPage({ data }) {
   if (!currentBook) {
     return <h1>404 An error occured...</h1>;
   }
+
+  function handleDeleteClick() {}
   return (
     <StyledDetail>
-      <Card book={currentBook} />
+      <Card book={currentBook}>
+        <StyledButton onClick={handleDeleteClick}>
+          <StyledImage
+            src="/img/icons/delete.svg"
+            height={30}
+            width={30}
+            alt="delete"
+          />
+        </StyledButton>
+      </Card>
       <StyledCard>
         <StyledId>
           <span>ID:</span>
@@ -75,4 +87,13 @@ const StyledLink = styled(Link)`
 
 const StyledLinkPlaceholder = styled.div`
   width: var(--main-link-button-width);
+`;
+
+const StyledButton = styled.button`
+  border: none;
+  background-color: var(--main-card-background-color);
+`;
+
+const StyledImage = styled(Image)`
+  border: var(--main-link-button-border);
 `;
