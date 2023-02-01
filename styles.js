@@ -8,7 +8,7 @@ export default createGlobalStyle`
     --main-margin: 10px;
     // Positioning
     --main-content-top: 60px;
-    --main-content-bottom: 55px;
+    --main-content-bottom: 50px;
     // Top
     --main-top-background-color: ivory;
     --main-top-padding: 10px;
@@ -62,5 +62,6 @@ export default createGlobalStyle`
     border-radius: 5px;
     padding: 5px;
     resize: none;
+    word-wrap: break-word;
   }
 `;

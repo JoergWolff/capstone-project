@@ -37,9 +37,10 @@ const StyledHome = styled.div`
   position: absolute;
   top: var(--main-content-top);
   right: 0;
-  bottom: 0;
+  bottom: var(--main-content-bottom);
   left: 0;
   overflow: scroll;
+  overflow-x: hidden;
 `;
 
 const StyledImage = styled(Image)`
