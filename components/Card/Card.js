@@ -5,23 +5,13 @@ import dummyBook from "../../public/img/dummy/dummy_book.png";
 export default function Card({ children, book }) {
   return (
     <StyledCard>
-      {book.coverImg ? (
-        <Image
-          src={book.coverImg}
-          width={70}
-          height={100}
-          alt={book.title}
-          priority
-        />
-      ) : (
-        <Image
-          src={dummyBook}
-          width={70}
-          height={100}
-          alt="No picture"
-          priority
-        />
-      )}
+      <Image
+        src={!book ? dummyBook : book.coverImg ? book.coverImg : dummyBook}
+        width={70}
+        height={100}
+        alt={!book ? "No Picture" : book.coverImg ? book.title : "No Picture"}
+        priority
+      />
       <StyledBookOverview>
         <h2>{book.author}</h2>
         <h3>{book.title}</h3>

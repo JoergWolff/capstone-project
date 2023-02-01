@@ -60,6 +60,7 @@ const StyledId = styled.div`
 
 const StyledArticle = styled.article`
   padding-top: 5px;
+  overflow-wrap: break-word;
 `;
 
 const StyledLink = styled(Link)`
