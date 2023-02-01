@@ -5,7 +5,7 @@ import Image from "next/image";
 import Card from "@/components/Card/Card";
 import Navigation from "@/components/Navigation/Navigation";
 
-export default function DetailBookPage({ data }) {
+export default function DetailBookPage({ data, onDeleteClick }) {
   const router = useRouter();
   const { id } = router.query;
 
@@ -15,12 +15,10 @@ export default function DetailBookPage({ data }) {
     return <h1>404 An error occured...</h1>;
   }
 
-  function handleDeleteClick() {}
-
   return (
     <StyledDetail>
       <Card book={currentBook}>
-        <StyledButton onClick={handleDeleteClick}>
+        <StyledButton onClick={() => onDeleteClick(currentBook)}>
           <StyledImage
             src="/img/icons/delete.svg"
             height={30}

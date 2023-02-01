@@ -51,6 +51,13 @@ export default function App({ Component, pageProps }) {
     router.push(`/`);
   }
 
+  function handleDeleteClick(currentBook) {
+    if (confirm("Are you sure") === true) {
+      handleDeleteBook(currentBook);
+      router.push("/");
+    }
+  }
+
   return (
     <>
       <GlobalStyle />
@@ -63,7 +70,7 @@ export default function App({ Component, pageProps }) {
         data={books}
         onEditSubmit={handleEditBook}
         onNewSubmit={handleNewBook}
-        onDeleteSubmit={handleDeleteBook}
+        onDeleteClick={handleDeleteClick}
       />
     </>
   );
