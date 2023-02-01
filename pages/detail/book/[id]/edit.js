@@ -2,7 +2,7 @@ import Link from "next/link";
 import { useRouter } from "next/router";
 import styled from "styled-components";
 import BookForm from "@/components/BookForm/BookForm";
-import Navigation from "@/components/Navigation/Navigation";
+import Bottom from "@/components/Bottom/Bottom";
 
 export default function EditBookPage({ data, onEditSubmit }) {
   const router = useRouter();
@@ -17,9 +17,9 @@ export default function EditBookPage({ data, onEditSubmit }) {
   return (
     <>
       <StyledEdit>
-        <BookForm book={currentBook} onSubmit={onEditSubmit} />
+        <BookForm book={currentBook} onEditSubmit={onEditSubmit} />
       </StyledEdit>
-      <Navigation>
+      <Bottom>
         <StyledLink href={`/detail/book/${currentBook.id}/detail`}>
           Back
         </StyledLink>
@@ -27,7 +27,7 @@ export default function EditBookPage({ data, onEditSubmit }) {
         <StyledButton type="submit" form="book-form">
           Save
         </StyledButton>
-      </Navigation>
+      </Bottom>
     </>
   );
 }

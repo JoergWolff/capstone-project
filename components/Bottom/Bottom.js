@@ -1,10 +1,10 @@
 import styled from "styled-components";
 
-export default function Navigation({ children }) {
-  return <StyledNavigation>{children}</StyledNavigation>;
+export default function Bottom({ children }) {
+  return <StyledBottom>{children}</StyledBottom>;
 }
 
-const StyledNavigation = styled.nav`
+const StyledBottom = styled.footer`
   position: fixed;
   right: 0;
   bottom: 0;

@@ -2,7 +2,7 @@ import styled from "styled-components";
 import { useRouter } from "next/router";
 import Link from "next/link";
 import Card from "@/components/Card/Card";
-import Navigation from "@/components/Navigation/Navigation";
+import Bottom from "@/components/Bottom/Bottom";
 
 export default function DetailBookPage({ data }) {
   const router = useRouter();
@@ -19,18 +19,18 @@ export default function DetailBookPage({ data }) {
       <StyledCard>
         <StyledId>
           <span>ID:</span>
-          <span>{currentBook.internalId}</span>
+          <span>{currentBook.id}</span>
         </StyledId>
         <h4>Teaser:</h4>
         <StyledArticle>{currentBook.teaser}</StyledArticle>
       </StyledCard>
-      <Navigation>
+      <Bottom>
         <StyledLinkPlaceholder></StyledLinkPlaceholder>
         <StyledLink href={`/`}>Home</StyledLink>
         <StyledLink href={`/detail/book/${currentBook.id}/edit`}>
           Edit
         </StyledLink>
-      </Navigation>
+      </Bottom>
     </StyledDetail>
   );
 }
