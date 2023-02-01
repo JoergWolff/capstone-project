@@ -16,6 +16,7 @@ export default function DetailBookPage({ data }) {
   }
 
   function handleDeleteClick() {}
+
   return (
     <StyledDetail>
       <Card book={currentBook}>

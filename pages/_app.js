@@ -45,6 +45,12 @@ export default function App({ Component, pageProps }) {
     router.push(`/`);
   }
 
+  function handleDeleteBook(currentBook) {
+    setBooks(books.filter((book) => book.id !== currentBook.id));
+
+    router.push(`/`);
+  }
+
   return (
     <>
       <GlobalStyle />
@@ -57,6 +63,7 @@ export default function App({ Component, pageProps }) {
         data={books}
         onEditSubmit={handleEditBook}
         onNewSubmit={handleNewBook}
+        onDeleteSubmit={handleDeleteBook}
       />
     </>
   );
