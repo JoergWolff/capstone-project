@@ -18,7 +18,7 @@ export default function DetailBookPage({ data, onDeleteClick }) {
 
   return (
     <StyledDetail>
-      <ModalDelete />
+      <ModalDelete book={currentBook} />
       <Card book={currentBook}>
         <StyledButton onClick={() => onDeleteClick(currentBook)}>
           <StyledImage
