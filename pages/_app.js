@@ -48,12 +48,14 @@ export default function App({ Component, pageProps }) {
   function handleDeleteBook(currentBook) {
     setBooks(books.filter((book) => book.id !== currentBook.id));
 
-    router.push(`/`);
+    router.push("/");
   }
 
-  function handleDeleteClick(currentBook) {
-    if (confirm("Are you sure") === true) {
+  function handleDeleteClick(isClicked, currentBook) {
+    if (isClicked) {
       handleDeleteBook(currentBook);
+    } else {
+      console.log("No Delete");
       router.push("/");
     }
   }
