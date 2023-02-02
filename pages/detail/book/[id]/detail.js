@@ -2,11 +2,18 @@ import styled from "styled-components";
 import { useRouter } from "next/router";
 import Link from "next/link";
 import Image from "next/image";
+import { useState } from "react";
 import ModalDelete from "@/components/ModalDelete/ModalDelete";
 import Card from "@/components/Card/Card";
 import Navigation from "@/components/Navigation/Navigation";
 
 export default function DetailBookPage({ data, onDeleteClick }) {
+  const [isVisible, setIsVisible] = useState(false);
+
+  function toggleVisible() {
+    setIsVisible(!isVisible);
+  }
+
   const router = useRouter();
   const { id } = router.query;
 
@@ -18,9 +25,14 @@ export default function DetailBookPage({ data, onDeleteClick }) {
 
   return (
     <StyledDetail>
-      <ModalDelete book={currentBook} />
+      <ModalDelete
+        book={currentBook}
+        onDeleteClick={onDeleteClick}
+        isVisible={isVisible}
+        onToggleVisible={toggleVisible}
+      />
       <Card book={currentBook}>
-        <StyledButton onClick={() => onDeleteClick(currentBook)}>
+        <StyledButton onClick={toggleVisible}>
           <StyledImage
             src="/img/icons/delete.svg"
             height={30}

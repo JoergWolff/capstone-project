@@ -55,7 +55,6 @@ export default function App({ Component, pageProps }) {
     if (isClicked) {
       handleDeleteBook(currentBook);
     } else {
-      console.log("No Delete");
       router.push("/");
     }
   }

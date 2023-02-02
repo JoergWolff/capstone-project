@@ -1,28 +1,34 @@
+import { useEffect } from "react";
 import styled from "styled-components";
 
-export default function ModalDelete({ book }) {
-  return (
-    <>
-      <h1>ModalDelete</h1>
+export default function ModalDelete({ book, onDeleteClick, isVisible }) {
+  if (isVisible) {
+    return (
       <StyledModal>
         <StyledModalContent>
-          <h1>Are you sure?</h1>
-          <h2>{book?.author}</h2>
-          <h3>{book?.title}</h3>
-          <StyledModalButton>Cancel</StyledModalButton>
-          <StyledModalButton>OK</StyledModalButton>
+          <h2>Are you sure to delete:</h2>
+          <h3>{book?.author}</h3>
+          <h4>{book?.title}</h4>
+          <StyledModalButton onClick={() => onDeleteClick(false, book)}>
+            Cancel
+          </StyledModalButton>
+          <StyledModalButton onClick={() => onDeleteClick(true, book)}>
+            OK
+          </StyledModalButton>
         </StyledModalContent>
       </StyledModal>
-    </>
-  );
+    );
+  } else {
+    return;
+  }
 }
 
 const StyledModal = styled.div`
+  transition: all 5000ms ease-in;
   position: absolute;
   width: 100%;
   height: 100%;
-  background-color: hsla(0, 100%, 50%, 0.5);
-  color: white;
+  background-color: hsla(0, 0%, 0%, 0.38);
   border: 1px solid lime;
   z-index: 1;
 `;
@@ -33,7 +39,7 @@ const StyledModalContent = styled.div`
   right: 5%;
   left: 5%;
   padding: 10px;
-  background-color: blue;
+  background-color: red;
   color: white;
   border: 1px solid lime;
   border-radius: 10px;
