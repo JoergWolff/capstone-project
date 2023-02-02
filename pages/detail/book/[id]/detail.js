@@ -2,6 +2,7 @@ import styled from "styled-components";
 import { useRouter } from "next/router";
 import Link from "next/link";
 import Image from "next/image";
+import ModalDelete from "@/components/ModalDelete/ModalDelete";
 import Card from "@/components/Card/Card";
 import Navigation from "@/components/Navigation/Navigation";
 
@@ -17,6 +18,7 @@ export default function DetailBookPage({ data, onDeleteClick }) {
 
   return (
     <StyledDetail>
+      <ModalDelete />
       <Card book={currentBook}>
         <StyledButton onClick={() => onDeleteClick(currentBook)}>
           <StyledImage
