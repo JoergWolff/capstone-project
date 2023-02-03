@@ -7,7 +7,7 @@ import ModalDelete from "@/components/ModalDelete/ModalDelete";
 import Card from "@/components/Card/Card";
 import Navigation from "@/components/Navigation/Navigation";
 
-export default function DetailBookPage({ data, onDeleteClick }) {
+export default function DetailBookPage({ data, onDelete, onCancel }) {
   const [isVisible, setIsVisible] = useState(false);
 
   function toggleVisible() {
@@ -27,7 +27,8 @@ export default function DetailBookPage({ data, onDeleteClick }) {
     <StyledDetail>
       <ModalDelete
         book={currentBook}
-        onDeleteClick={onDeleteClick}
+        onDelete={onDelete}
+        onCancel={onCancel}
         isVisible={isVisible}
         onToggleVisible={toggleVisible}
       />
