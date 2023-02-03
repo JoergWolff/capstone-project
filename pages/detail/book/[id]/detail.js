@@ -1,10 +1,19 @@
 import styled from "styled-components";
 import { useRouter } from "next/router";
 import Link from "next/link";
+import Image from "next/image";
+import { useState } from "react";
+import ModalDelete from "@/components/ModalDelete/ModalDelete";
 import Card from "@/components/Card/Card";
 import Navigation from "@/components/Navigation/Navigation";
 
-export default function DetailBookPage({ data }) {
+export default function DetailBookPage({ data, onDelete, onCancel }) {
+  const [isVisible, setIsVisible] = useState(false);
+
+  function toggleVisible() {
+    setIsVisible(!isVisible);
+  }
+
   const router = useRouter();
   const { id } = router.query;
 
@@ -13,9 +22,26 @@ export default function DetailBookPage({ data }) {
   if (!currentBook) {
     return <h1>404 An error occured...</h1>;
   }
+
   return (
     <StyledDetail>
-      <Card book={currentBook} />
+      <ModalDelete
+        book={currentBook}
+        onDelete={onDelete}
+        onCancel={onCancel}
+        isVisible={isVisible}
+        onToggleVisible={toggleVisible}
+      />
+      <Card book={currentBook}>
+        <StyledButton onClick={toggleVisible}>
+          <StyledImage
+            src="/img/icons/delete.svg"
+            height={30}
+            width={30}
+            alt="delete"
+          />
+        </StyledButton>
+      </Card>
       <StyledCard>
         <StyledId>
           <span>ID:</span>
@@ -75,4 +101,13 @@ const StyledLink = styled(Link)`
 
 const StyledLinkPlaceholder = styled.div`
   width: var(--main-link-button-width);
+`;
+
+const StyledButton = styled.button`
+  border: none;
+  background-color: var(--main-card-background-color);
+`;
+
+const StyledImage = styled(Image)`
+  border: var(--main-link-button-border);
 `;
