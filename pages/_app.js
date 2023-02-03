@@ -51,12 +51,8 @@ export default function App({ Component, pageProps }) {
     router.push("/");
   }
 
-  function handleDeleteClick(isClicked, currentBook) {
-    if (isClicked) {
-      handleDeleteBook(currentBook);
-    } else {
-      router.push("/");
-    }
+  function handleCancel() {
+    router.push("/");
   }
 
   return (
@@ -71,7 +67,8 @@ export default function App({ Component, pageProps }) {
         data={books}
         onEditSubmit={handleEditBook}
         onNewSubmit={handleNewBook}
-        onDeleteClick={handleDeleteClick}
+        onDelete={handleDeleteBook}
+        onCancel={handleCancel}
       />
     </>
   );

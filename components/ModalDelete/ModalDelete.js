@@ -9,7 +9,9 @@ export default function ModalDelete({ book, onDelete, onCancel, isVisible }) {
           <h2>Are you sure to delete:</h2>
           <h3>{book?.author}</h3>
           <h4>{book?.title}</h4>
-          <StyledModalButton onClick={() => onCancel}>Cancel</StyledModalButton>
+          <StyledModalButton onClick={() => onCancel()}>
+            Cancel
+          </StyledModalButton>
           <StyledModalButton onClick={() => onDelete(book)}>
             OK
           </StyledModalButton>
