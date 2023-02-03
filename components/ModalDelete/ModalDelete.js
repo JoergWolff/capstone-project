@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import styled from "styled-components";
 
-export default function ModalDelete({ book, onDeleteClick, isVisible }) {
+export default function ModalDelete({ book, onDelete, onCancel, isVisible }) {
   if (isVisible) {
     return (
       <StyledModal>
@@ -9,10 +9,8 @@ export default function ModalDelete({ book, onDeleteClick, isVisible }) {
           <h2>Are you sure to delete:</h2>
           <h3>{book?.author}</h3>
           <h4>{book?.title}</h4>
-          <StyledModalButton onClick={() => onDeleteClick(false, book)}>
-            Cancel
-          </StyledModalButton>
-          <StyledModalButton onClick={() => onDeleteClick(true, book)}>
+          <StyledModalButton onClick={() => onCancel}>Cancel</StyledModalButton>
+          <StyledModalButton onClick={() => onDelete(book)}>
             OK
           </StyledModalButton>
         </StyledModalContent>
