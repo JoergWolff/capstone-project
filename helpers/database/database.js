@@ -1,7 +1,7 @@
 import mongoose, { model, models, Schema } from "mongoose";
 import { v4 } from "uuid";
 
-const URI = `mongodb+srv://${process.env.MONGODB_USER}:${process.env.MONGODB_PSWD}@cluster0.jkgo6ys.mongodb.net/mediadb/?retryWrites=true&w=majority`;
+const URI = `mongodb+srv://${process.env.MONGODB_USER}:${process.env.MONGODB_PSWD}@cluster0.jkgo6ys.mongodb.net/mediadb?retryWrites=true&w=majority`;
 
 const bookSchema = new Schema({
   id: String,

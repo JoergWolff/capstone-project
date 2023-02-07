@@ -2,6 +2,7 @@ import GlobalStyle from "@/styles";
 import Head from "next/head";
 import useLocalStorageState from "use-local-storage-state";
 import { useRouter } from "next/router";
+import useSWR from "swr";
 import { v4 } from "uuid";
 import { initialData } from "@/helpers/data/data";
 import { fetcher } from "@/helpers/database/fetcher";
@@ -9,6 +10,7 @@ import Top from "@/components/Top/Top";
 
 export default function App({ Component, pageProps }) {
   const router = useRouter();
+  console.log(v4());
 
   const [books, setBooks] = useLocalStorageState("books", {
     defaultValue: [...initialData],
@@ -16,6 +18,16 @@ export default function App({ Component, pageProps }) {
 
   const { data, error, isLoading } = useSWR("/api/books/", fetcher);
 
+  if (data) {
+    console.log(data);
+    setBooks([...data]);
+  }
+  if (isLoading) {
+    return <h1>Hello</h1>;
+  }
+  if (error) {
+    console.log(error.message);
+  }
   const bookCounter = books.length;
 
   function handleEditBook(currentBook) {
