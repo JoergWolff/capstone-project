@@ -20,7 +20,7 @@ export default function EditBookPage({ data, onEditSubmit }) {
         <BookForm book={currentBook} onSubmit={onEditSubmit} />
       </StyledEdit>
       <Navigation>
-        <StyledLink href={`/detail/book/${currentBook.id}/detail`}>
+        <StyledLink href={`/books/details/${currentBook.id}/detail`}>
           Back
         </StyledLink>
         <StyledLink href={`/`}>Home</StyledLink>

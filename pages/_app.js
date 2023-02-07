@@ -28,7 +28,7 @@ export default function App({ Component, pageProps }) {
           : book
       )
     );
-    router.push(`/detail/book/${currentBook.id}/detail`);
+    router.push(`/books/details/${currentBook.id}/detail`);
   }
 
   function handleNewBook(currentBook) {

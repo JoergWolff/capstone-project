@@ -12,7 +12,7 @@ export default function HomePage({ data }) {
           {data.map((book) => (
             <li key={book.id}>
               <Card book={book}>
-                <Link href={`/detail/book/${book.id}/detail`}>
+                <Link href={`/books/details/${book.id}/detail`}>
                   <StyledImage
                     src="/img/icons/info.svg"
                     height={30}
@@ -27,7 +27,7 @@ export default function HomePage({ data }) {
       </StyledHome>
       <Navigation>
         <StyledLinkPlaceholder />
-        <StyledLink href="/book/create">New</StyledLink>
+        <StyledLink href="/books/create">New</StyledLink>
       </Navigation>
     </>
   );

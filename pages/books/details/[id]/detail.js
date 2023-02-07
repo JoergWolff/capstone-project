@@ -53,7 +53,7 @@ export default function DetailBookPage({ data, onDelete, onCancel }) {
       <Navigation>
         <StyledLinkPlaceholder></StyledLinkPlaceholder>
         <StyledLink href={`/`}>Home</StyledLink>
-        <StyledLink href={`/detail/book/${currentBook.id}/edit`}>
+        <StyledLink href={`/books/details/${currentBook.id}/edit`}>
           Edit
         </StyledLink>
       </Navigation>
