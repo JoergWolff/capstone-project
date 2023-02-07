@@ -4,13 +4,17 @@ import useLocalStorageState from "use-local-storage-state";
 import { useRouter } from "next/router";
 import { v4 } from "uuid";
 import { initialData } from "@/helpers/data/data";
+import { fetcher } from "@/helpers/database/fetcher";
 import Top from "@/components/Top/Top";
 
 export default function App({ Component, pageProps }) {
+  const router = useRouter();
+
   const [books, setBooks] = useLocalStorageState("books", {
     defaultValue: [...initialData],
   });
-  const router = useRouter();
+
+  const { data, error, isLoading } = useSWR("/api/books/", fetcher);
 
   const bookCounter = books.length;
 
