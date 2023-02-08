@@ -3,60 +3,85 @@ import { useRouter } from "next/router";
 import Link from "next/link";
 import Image from "next/image";
 import { useState } from "react";
+import useSWR from "swr";
+import { fetcher } from "@/helpers/database/fetcher";
 import ModalDelete from "@/components/ModalDelete/ModalDelete";
 import Card from "@/components/Card/Card";
 import Navigation from "@/components/Navigation/Navigation";
 
 export default function DetailBookPage({ data, onDelete, onCancel }) {
+  const router = useRouter();
+  const { id } = router.query;
   const [isVisible, setIsVisible] = useState(false);
+
+  const {
+    data: currentBook,
+    error,
+    isLoading,
+  } = useSWR(`/api/books/${id}`, fetcher);
+  if (error) {
+    return <h2>Check your connections...</h2>;
+  }
 
   function toggleVisible() {
     setIsVisible(!isVisible);
   }
+  async function handleDelete() {
+    await fetch(`/api/books/${id}`, {
+      method: "DELETE",
+    });
+    router.push("/");
+  }
 
-  const router = useRouter();
-  const { id } = router.query;
-
-  const currentBook = data.find((book) => book.id === id);
-
-  if (!currentBook) {
-    return <h1>404 An error occured...</h1>;
+  function handleCancel() {
+    toggleVisible();
   }
 
   return (
     <StyledDetail>
-      <ModalDelete
-        book={currentBook}
-        onDelete={onDelete}
-        onCancel={onCancel}
-        isVisible={isVisible}
-        onToggleVisible={toggleVisible}
-      />
-      <Card book={currentBook}>
-        <StyledButton onClick={toggleVisible}>
-          <StyledImage
-            src="/img/icons/delete.svg"
-            height={30}
-            width={30}
-            alt="delete"
+      {isLoading ? (
+        <Navigation>
+          <StyledLinkPlaceholder />
+          <StyledLink href={`/`}>Home</StyledLink>
+          <StyledLinkPlaceholder />
+        </Navigation>
+      ) : (
+        <>
+          <ModalDelete
+            book={currentBook}
+            onDelete={handleDelete}
+            onCancel={handleCancel}
+            isVisible={isVisible}
           />
-        </StyledButton>
-      </Card>
-      <StyledCard>
-        <StyledId>
-          <span>ID:</span>
-          <span>{currentBook.internalId}</span>
-        </StyledId>
-        <h4>Teaser:</h4>
-        <StyledArticle>{currentBook.teaser}</StyledArticle>
-      </StyledCard>
-      <Navigation>
-        <StyledLinkPlaceholder></StyledLinkPlaceholder>
-        <StyledLink href={`/`}>Home</StyledLink>
-        <StyledLink href={`/books/details/${currentBook.id}/edit`}>
-          Edit
-        </StyledLink>
-      </Navigation>
+          <Card book={currentBook}>
+            <StyledButton onClick={toggleVisible}>
+              <StyledImage
+                src="/img/icons/delete.svg"
+                height={30}
+                width={30}
+                alt="delete"
+                hidden={isVisible}
+              />
+            </StyledButton>
+          </Card>
+          <StyledCard>
+            <StyledId>
+              <span>ID:</span>
+              <span>{currentBook.internalId}</span>
+            </StyledId>
+            <h4>Teaser:</h4>
+            <StyledArticle>{currentBook.teaser}</StyledArticle>
+          </StyledCard>
+
+          <Navigation>
+            <StyledLinkPlaceholder />
+            <StyledLink href={`/`}>Home</StyledLink>
+            <StyledLink href={`/books/details/${currentBook.id}/edit`}>
+              Edit
+            </StyledLink>
+          </Navigation>
+        </>
+      )}
     </StyledDetail>
   );
 }
