@@ -27,10 +27,10 @@ export default function DetailBookPage({ data, onDelete, onCancel }) {
     setIsVisible(!isVisible);
   }
   async function handleDelete() {
+    router.push("/");
     await fetch(`/api/books/${id}`, {
       method: "DELETE",
     });
-    router.push("/");
   }
 
   function handleCancel() {
