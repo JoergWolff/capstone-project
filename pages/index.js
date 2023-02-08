@@ -17,20 +17,22 @@ export default function HomePage() {
         <ul>
           {isLoading
             ? null
-            : data.map((book) => (
-                <li key={book.id}>
-                  <Card book={book}>
-                    <Link href={`/books/details/${book.id}/detail`}>
-                      <StyledImage
-                        src="/img/icons/info.svg"
-                        height={30}
-                        width={30}
-                        alt="info"
-                      />
-                    </Link>
-                  </Card>
-                </li>
-              ))}
+            : data
+                .sort((a, b) => b.timestamp - a.timestamp)
+                .map((book) => (
+                  <li key={book.id}>
+                    <Card book={book}>
+                      <Link href={`/books/details/${book.id}/detail`}>
+                        <StyledImage
+                          src="/img/icons/info.svg"
+                          height={30}
+                          width={30}
+                          alt="info"
+                        />
+                      </Link>
+                    </Card>
+                  </li>
+                ))}
         </ul>
       </StyledHome>
       <Navigation>
