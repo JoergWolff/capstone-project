@@ -5,7 +5,8 @@ const URI = `mongodb+srv://${process.env.MONGODB_USER}:${process.env.MONGODB_PSW
 
 const bookSchema = new Schema({
   id: String,
-  internalId: Number,
+  timestamp: Number,
+  internalId: String,
   author: String,
   olAuthorId: String,
   title: String,
@@ -60,6 +61,7 @@ export async function createBook(book) {
   const createdBook = await Book.create({
     ...book,
     id: v4(),
+    timestamp: Date.now(),
     internalId: 0,
     olAuthorId: "",
     olTitleId: "",
