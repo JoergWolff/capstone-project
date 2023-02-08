@@ -1,12 +1,21 @@
 import Link from "next/link";
 import styled from "styled-components";
+import { useRouter } from "next/router";
 import BookForm from "@/components/BookForm/BookForm";
 import Navigation from "@/components/Navigation/Navigation";
 
-export default function CreateBookPage({ onNewSubmit }) {
+export default function CreateBookPage() {
+  const router = useRouter();
+  async function handleSubmit(data) {
+    await fetch("/api/books", {
+      method: "POST",
+      body: JSON.stringify(data),
+    });
+    router.push("/");
+  }
   return (
     <StyledMain>
-      <BookForm onSubmit={onNewSubmit} />
+      <BookForm onSubmit={handleSubmit} />
       <Navigation>
         <StyledLinkPlaceholder />
         <StyledLink href="/">Home</StyledLink>
