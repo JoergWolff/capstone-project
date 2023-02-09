@@ -9,7 +9,7 @@ import ModalDelete from "@/components/ModalDelete/ModalDelete";
 import Card from "@/components/Card/Card";
 import Navigation from "@/components/Navigation/Navigation";
 
-export default function DetailBookPage({ data, onDelete, onCancel }) {
+export default function DetailBookPage() {
   const router = useRouter();
   const { id } = router.query;
   const [isVisible, setIsVisible] = useState(false);
