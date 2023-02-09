@@ -6,7 +6,7 @@ import { fetcher } from "@/helpers/database/fetcher";
 import BookForm from "@/components/BookForm/BookForm";
 import Navigation from "@/components/Navigation/Navigation";
 
-export default function EditBookPage({ data, onEditSubmit }) {
+export default function EditBookPage() {
   const router = useRouter();
   const { id } = router.query;
 

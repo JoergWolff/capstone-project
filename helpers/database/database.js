@@ -1,6 +1,8 @@
 import mongoose, { model, models, Schema } from "mongoose";
 import { v4 } from "uuid";
 
+mongoose.set("strictQuery", true);
+
 const URI = `mongodb+srv://${process.env.MONGODB_USER}:${process.env.MONGODB_PSWD}@cluster0.jkgo6ys.mongodb.net/mediadb?retryWrites=true&w=majority`;
 
 const bookSchema = new Schema({
@@ -20,7 +22,14 @@ const bookSchema = new Schema({
   isFavorite: Boolean,
   isActive: Boolean,
 });
+
+const counterSchema = new Schema({
+  type: String,
+  value: Number,
+});
+
 const Book = models.Book || model("Book", bookSchema);
+const Counter = models.Counter || model("Counter", counterSchema);
 
 async function connectDatabase() {
   await mongoose.connect(URI);
@@ -62,7 +71,6 @@ export async function createBook(book) {
     ...book,
     id: v4(),
     timestamp: Date.now(),
-    internalId: 0,
     olAuthorId: "",
     olTitleId: "",
     olCoverId: "",
@@ -71,4 +79,20 @@ export async function createBook(book) {
     isFavorite: false,
     isActive: true,
   });
+  return createdBook;
+}
+
+export async function getCounterByType(type) {
+  await connectDatabase();
+  const counter = await Counter.findOne({
+    type,
+  });
+  return counter;
+}
+
+export async function updateCounter(type, value) {
+  await connectDatabase();
+  await Counter.updateOne({ type }, value);
+  const updatedCounter = getCounterByType(type);
+  return updatedCounter;
 }
