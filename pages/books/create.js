@@ -27,7 +27,6 @@ export default function CreateBookPage() {
       value: counter,
       type: "book",
     };
-    console.log(updatedCounter);
     await fetch("/api/counter/book", {
       method: "PATCH",
       body: JSON.stringify(updatedCounter),
