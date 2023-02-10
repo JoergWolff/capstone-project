@@ -1,10 +1,16 @@
 import styled from "styled-components";
+import useSWR from "swr";
+import { fetcher } from "@/helpers/database/fetcher";
 
-export default function Top({ bookcounter }) {
+export default function Top() {
+  const { data, isLoading, error } = useSWR("/api/books/", fetcher);
+  if (error) {
+    return <h2>Check your connections...</h2>;
+  }
   return (
     <StyledHeader>
       <h1>MEDIA DB</h1>
-      {bookcounter && <span>{bookcounter} books</span>}
+      {isLoading ? null : <span>{data.length} books</span>}
     </StyledHeader>
   );
 }

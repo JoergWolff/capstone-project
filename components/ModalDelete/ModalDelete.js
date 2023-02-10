@@ -1,4 +1,3 @@
-import { useEffect } from "react";
 import styled from "styled-components";
 
 export default function ModalDelete({ book, onDelete, onCancel, isVisible }) {

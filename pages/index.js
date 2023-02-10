@@ -1,33 +1,43 @@
 import Link from "next/link";
 import Image from "next/image";
 import styled from "styled-components";
+import useSWR from "swr";
+import { fetcher } from "@/helpers/database/fetcher";
 import Card from "@/components/Card/Card";
 import Navigation from "@/components/Navigation/Navigation";
 
-export default function HomePage({ data }) {
+export default function HomePage() {
+  const { data, error, isLoading } = useSWR("/api/books/", fetcher);
+  if (error) {
+    return <h2>Check your connections...</h2>;
+  }
   return (
     <>
       <StyledHome>
         <ul>
-          {data.map((book) => (
-            <li key={book.id}>
-              <Card book={book}>
-                <Link href={`/detail/book/${book.id}/detail`}>
-                  <StyledImage
-                    src="/img/icons/info.svg"
-                    height={30}
-                    width={30}
-                    alt="info"
-                  />
-                </Link>
-              </Card>
-            </li>
-          ))}
+          {isLoading
+            ? null
+            : data
+                .sort((a, b) => b.timestamp - a.timestamp)
+                .map((book) => (
+                  <li key={book.id}>
+                    <Card book={book}>
+                      <Link href={`/books/details/${book.id}/detail`}>
+                        <StyledImage
+                          src="/img/icons/info.svg"
+                          height={30}
+                          width={30}
+                          alt="info"
+                        />
+                      </Link>
+                    </Card>
+                  </li>
+                ))}
         </ul>
       </StyledHome>
       <Navigation>
         <StyledLinkPlaceholder />
-        <StyledLink href="/book/create">New</StyledLink>
+        <StyledLink href="/books/create">New</StyledLink>
       </Navigation>
     </>
   );
