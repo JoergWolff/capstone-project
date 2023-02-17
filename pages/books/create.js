@@ -5,7 +5,7 @@ import useSWR from "swr";
 import { fetcher } from "@/helpers/database/fetcher";
 import StyledContent from "@/components/StyledContent/StyledContent";
 import BookForm from "@/components/BookForm/BookForm";
-import Navigation from "@/components/Navigation/Navigation";
+import StyledNavigation from "@/components/StyledNavigation/StyledNavigation";
 
 export default function CreateBookPage() {
   const router = useRouter();
@@ -49,13 +49,13 @@ export default function CreateBookPage() {
   return (
     <StyledContent>
       <BookForm onSubmit={handleSubmit} />
-      <Navigation>
+      <StyledNavigation>
         <StyledLinkPlaceholder />
         <StyledLink href="/">Home</StyledLink>
         <StyledButton type="submit" form="book-form">
           Save
         </StyledButton>
-      </Navigation>
+      </StyledNavigation>
     </StyledContent>
   );
 }

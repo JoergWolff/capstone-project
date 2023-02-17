@@ -7,7 +7,7 @@ import useSWR from "swr";
 import { fetcher } from "@/helpers/database/fetcher";
 import StyledContent from "@/components/StyledContent/StyledContent";
 import Card from "@/components/Card/Card";
-import Navigation from "@/components/Navigation/Navigation";
+import StyledNavigation from "@/components/StyledNavigation/StyledNavigation";
 import ModalDelete from "@/components/ModalDelete/ModalDelete";
 
 export default function DetailBookPage() {
@@ -41,11 +41,11 @@ export default function DetailBookPage() {
   return (
     <StyledContent>
       {isLoading ? (
-        <Navigation>
+        <StyledNavigation>
           <StyledLinkPlaceholder />
           <StyledLink href={`/`}>Home</StyledLink>
           <StyledLinkPlaceholder />
-        </Navigation>
+        </StyledNavigation>
       ) : (
         <>
           <ModalDelete
@@ -74,13 +74,13 @@ export default function DetailBookPage() {
             <StyledArticle>{currentBook.teaser}</StyledArticle>
           </StyledCard>
 
-          <Navigation>
+          <StyledNavigation>
             <StyledLinkPlaceholder />
             <StyledLink href={`/`}>Home</StyledLink>
             <StyledLink href={`/books/details/${currentBook.id}/edit`}>
               Edit
             </StyledLink>
-          </Navigation>
+          </StyledNavigation>
         </>
       )}
     </StyledContent>

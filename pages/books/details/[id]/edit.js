@@ -5,7 +5,7 @@ import useSWR from "swr";
 import { fetcher } from "@/helpers/database/fetcher";
 import StyledContent from "@/components/StyledContent/StyledContent";
 import BookForm from "@/components/BookForm/BookForm";
-import Navigation from "@/components/Navigation/Navigation";
+import StyledNavigation from "@/components/StyledNavigation/StyledNavigation";
 
 export default function EditBookPage() {
   const router = useRouter();
@@ -33,18 +33,18 @@ export default function EditBookPage() {
       {isLoading ? (
         <>
           <StyledContent />
-          <Navigation>
+          <StyledNavigation>
             <StyledLinkPlaceholder />
             <StyledLink href={`/`}>Home</StyledLink>
             <StyledLinkPlaceholder />
-          </Navigation>
+          </StyledNavigation>
         </>
       ) : (
         <>
           <StyledContent>
             <BookForm book={currentBook} onSubmit={handleSubmit} />
           </StyledContent>
-          <Navigation>
+          <StyledNavigation>
             <StyledLink href={`/books/details/${currentBook.id}/detail`}>
               Back
             </StyledLink>
@@ -52,7 +52,7 @@ export default function EditBookPage() {
             <StyledButton type="submit" form="book-form">
               Save
             </StyledButton>
-          </Navigation>
+          </StyledNavigation>
         </>
       )}
     </>

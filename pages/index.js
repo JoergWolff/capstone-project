@@ -5,7 +5,7 @@ import useSWR from "swr";
 import { fetcher } from "@/helpers/database/fetcher";
 import StyledContent from "@/components/StyledContent/StyledContent";
 import Card from "@/components/Card/Card";
-import Navigation from "@/components/Navigation/Navigation";
+import StyledNavigation from "@/components/StyledNavigation/StyledNavigation";
 
 export default function HomePage() {
   const { data, error, isLoading } = useSWR("/api/books/", fetcher);
@@ -36,10 +36,10 @@ export default function HomePage() {
                 ))}
         </ul>
       </StyledContent>
-      <Navigation>
+      <StyledNavigation>
         <StyledLinkPlaceholder />
         <StyledLink href="/books/create">New</StyledLink>
-      </Navigation>
+      </StyledNavigation>
     </>
   );
 }
