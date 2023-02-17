@@ -11,8 +11,8 @@ export default function BookForm({ book, onSubmit }) {
   }
 
   return (
-    <StyledForm onSubmit={handleSubmit} id="book-form">
-      <StyledTopForm>
+    <StyledForm onSubmit={handleSubmit} id="book-form" autoComplete="off">
+      <StyledFormTop>
         <Image
           src={!book ? dummyBook : book.coverImg ? book.coverImg : dummyBook}
           width={70}
@@ -20,7 +20,7 @@ export default function BookForm({ book, onSubmit }) {
           alt={!book ? "No Picture" : book.coverImg ? book.title : "No Picture"}
           priority
         />
-      </StyledTopForm>
+      </StyledFormTop>
       <input
         defaultValue={book?.id}
         type="text"
@@ -84,7 +84,7 @@ const StyledForm = styled.form`
   padding: 10px;
 `;
 
-const StyledTopForm = styled.div`
+const StyledFormTop = styled.div`
   display: flex;
   flex-direction: row;
 `;
