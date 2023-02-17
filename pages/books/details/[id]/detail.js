@@ -5,9 +5,10 @@ import Image from "next/image";
 import { useState } from "react";
 import useSWR from "swr";
 import { fetcher } from "@/helpers/database/fetcher";
-import ModalDelete from "@/components/ModalDelete/ModalDelete";
+import Content from "@/components/Content/Content";
 import Card from "@/components/Card/Card";
 import Navigation from "@/components/Navigation/Navigation";
+import ModalDelete from "@/components/ModalDelete/ModalDelete";
 
 export default function DetailBookPage() {
   const router = useRouter();
@@ -38,7 +39,7 @@ export default function DetailBookPage() {
   }
 
   return (
-    <StyledDetail>
+    <Content>
       {isLoading ? (
         <Navigation>
           <StyledLinkPlaceholder />
@@ -82,18 +83,9 @@ export default function DetailBookPage() {
           </Navigation>
         </>
       )}
-    </StyledDetail>
+    </Content>
   );
 }
-
-const StyledDetail = styled.div`
-  position: absolute;
-  top: var(--main-content-top);
-  right: 0;
-  bottom: var(--main-content-bottom);
-  left: 0;
-  overflow: scroll;
-`;
 
 const StyledCard = styled.div`
   margin: var(--main-margin);

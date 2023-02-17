@@ -3,6 +3,7 @@ import styled from "styled-components";
 import { useRouter } from "next/router";
 import useSWR from "swr";
 import { fetcher } from "@/helpers/database/fetcher";
+import Content from "@/components/Content/Content";
 import BookForm from "@/components/BookForm/BookForm";
 import Navigation from "@/components/Navigation/Navigation";
 
@@ -46,7 +47,7 @@ export default function CreateBookPage() {
     router.push("/");
   }
   return (
-    <StyledMain>
+    <Content>
       <BookForm onSubmit={handleSubmit} />
       <Navigation>
         <StyledLinkPlaceholder />
@@ -55,18 +56,9 @@ export default function CreateBookPage() {
           Save
         </StyledButton>
       </Navigation>
-    </StyledMain>
+    </Content>
   );
 }
-
-const StyledMain = styled.div`
-  position: absolute;
-  top: var(--main-content-top);
-  right: 0;
-  bottom: var(--main-content-bottom);
-  left: 0;
-  overflow: scroll;
-`;
 
 const StyledLink = styled(Link)`
   border: var(--main-link-button-border);

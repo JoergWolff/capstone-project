@@ -3,6 +3,7 @@ import { useRouter } from "next/router";
 import styled from "styled-components";
 import useSWR from "swr";
 import { fetcher } from "@/helpers/database/fetcher";
+import Content from "@/components/Content/Content";
 import BookForm from "@/components/BookForm/BookForm";
 import Navigation from "@/components/Navigation/Navigation";
 
@@ -31,7 +32,7 @@ export default function EditBookPage() {
     <>
       {isLoading ? (
         <>
-          <StyledEdit />
+          <Content />
           <Navigation>
             <StyledLinkPlaceholder />
             <StyledLink href={`/`}>Home</StyledLink>
@@ -40,9 +41,9 @@ export default function EditBookPage() {
         </>
       ) : (
         <>
-          <StyledEdit>
+          <Content>
             <BookForm book={currentBook} onSubmit={handleSubmit} />
-          </StyledEdit>
+          </Content>
           <Navigation>
             <StyledLink href={`/books/details/${currentBook.id}/detail`}>
               Back
@@ -57,15 +58,6 @@ export default function EditBookPage() {
     </>
   );
 }
-
-const StyledEdit = styled.div`
-  position: absolute;
-  top: var(--main-content-top);
-  right: 0;
-  bottom: var(--main-content-bottom);
-  left: 0;
-  overflow: scroll;
-`;
 
 const StyledLink = styled(Link)`
   border: var(--main-link-button-border);

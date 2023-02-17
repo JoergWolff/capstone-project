@@ -3,6 +3,7 @@ import Image from "next/image";
 import styled from "styled-components";
 import useSWR from "swr";
 import { fetcher } from "@/helpers/database/fetcher";
+import Content from "@/components/Content/Content";
 import Card from "@/components/Card/Card";
 import Navigation from "@/components/Navigation/Navigation";
 
@@ -13,7 +14,7 @@ export default function HomePage() {
   }
   return (
     <>
-      <StyledHome>
+      <Content>
         <ul>
           {isLoading
             ? null
@@ -34,7 +35,7 @@ export default function HomePage() {
                   </li>
                 ))}
         </ul>
-      </StyledHome>
+      </Content>
       <Navigation>
         <StyledLinkPlaceholder />
         <StyledLink href="/books/create">New</StyledLink>
@@ -42,16 +43,6 @@ export default function HomePage() {
     </>
   );
 }
-
-const StyledHome = styled.div`
-  position: absolute;
-  top: var(--main-content-top);
-  right: 0;
-  bottom: var(--main-content-bottom);
-  left: 0;
-  overflow: scroll;
-  overflow-x: hidden;
-`;
 
 const StyledImage = styled(Image)`
   border: var(--main-link-button-border);
