@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export default function Content({ children }) {
+export default function StyledContent({ children }) {
   return <StyledMain>{children}</StyledMain>;
 }
 

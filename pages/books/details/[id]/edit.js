@@ -3,7 +3,7 @@ import { useRouter } from "next/router";
 import styled from "styled-components";
 import useSWR from "swr";
 import { fetcher } from "@/helpers/database/fetcher";
-import Content from "@/components/Content/Content";
+import StyledContent from "@/components/StyledContent/StyledContent";
 import BookForm from "@/components/BookForm/BookForm";
 import Navigation from "@/components/Navigation/Navigation";
 
@@ -32,7 +32,7 @@ export default function EditBookPage() {
     <>
       {isLoading ? (
         <>
-          <Content />
+          <StyledContent />
           <Navigation>
             <StyledLinkPlaceholder />
             <StyledLink href={`/`}>Home</StyledLink>
@@ -41,9 +41,9 @@ export default function EditBookPage() {
         </>
       ) : (
         <>
-          <Content>
+          <StyledContent>
             <BookForm book={currentBook} onSubmit={handleSubmit} />
-          </Content>
+          </StyledContent>
           <Navigation>
             <StyledLink href={`/books/details/${currentBook.id}/detail`}>
               Back

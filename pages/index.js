@@ -3,7 +3,7 @@ import Image from "next/image";
 import styled from "styled-components";
 import useSWR from "swr";
 import { fetcher } from "@/helpers/database/fetcher";
-import Content from "@/components/Content/Content";
+import StyledContent from "@/components/StyledContent/StyledContent";
 import Card from "@/components/Card/Card";
 import Navigation from "@/components/Navigation/Navigation";
 
@@ -14,7 +14,7 @@ export default function HomePage() {
   }
   return (
     <>
-      <Content>
+      <StyledContent>
         <ul>
           {isLoading
             ? null
@@ -35,7 +35,7 @@ export default function HomePage() {
                   </li>
                 ))}
         </ul>
-      </Content>
+      </StyledContent>
       <Navigation>
         <StyledLinkPlaceholder />
         <StyledLink href="/books/create">New</StyledLink>

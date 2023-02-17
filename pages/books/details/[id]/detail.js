@@ -5,7 +5,7 @@ import Image from "next/image";
 import { useState } from "react";
 import useSWR from "swr";
 import { fetcher } from "@/helpers/database/fetcher";
-import Content from "@/components/Content/Content";
+import StyledContent from "@/components/StyledContent/StyledContent";
 import Card from "@/components/Card/Card";
 import Navigation from "@/components/Navigation/Navigation";
 import ModalDelete from "@/components/ModalDelete/ModalDelete";
@@ -39,7 +39,7 @@ export default function DetailBookPage() {
   }
 
   return (
-    <Content>
+    <StyledContent>
       {isLoading ? (
         <Navigation>
           <StyledLinkPlaceholder />
@@ -83,7 +83,7 @@ export default function DetailBookPage() {
           </Navigation>
         </>
       )}
-    </Content>
+    </StyledContent>
   );
 }
 
