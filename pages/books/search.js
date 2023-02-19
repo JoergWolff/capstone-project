@@ -20,12 +20,14 @@ export default function SearchBookPage() {
             <StyledButton onClick={handelToggleSection}>
               Search by ISBN
             </StyledButton>
+            <StyledH3>Search by Author and Title:</StyledH3>
           </StyledSection>
         ) : (
           <StyledSection>
             <StyledButton onClick={handelToggleSection}>
               Search by Author and Title
             </StyledButton>
+            <StyledH3>Search by ISBN:</StyledH3>
           </StyledSection>
         )}
       </StyledContent>
@@ -52,6 +54,12 @@ const StyledButton = styled.button`
   color: var(--main-link-button-color);
   text-align: center;
   background-color: var(--main-bottom-background-color);
+`;
+
+const StyledH3 = styled.h3`
+  display: block;
+  text-align: center;
+  padding-top: 10px;
 `;
 
 const StyledLink = styled(Link)`
