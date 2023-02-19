@@ -50,7 +50,7 @@ export default function CreateBookPage() {
     <StyledContent>
       <BookForm onSubmit={handleSubmit} />
       <StyledNavigation>
-        <StyledLinkPlaceholder />
+        <StyledLink href="/books/search">Search</StyledLink>
         <StyledLink href="/">Home</StyledLink>
         <StyledButton type="submit" form="book-form">
           Save
