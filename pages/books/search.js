@@ -21,6 +21,12 @@ export default function SearchBookPage() {
               Search by ISBN
             </StyledButton>
             <StyledH3>Search by Author and Title:</StyledH3>
+            <StyledForm>
+              <label htmlFor="author-input">Author:</label>
+              <input id="author-input" name="author" maxLength="30" required />
+              <label htmlFor="title-input">Title:</label>
+              <input id="title-input" name="title" maxLength="30" required />
+            </StyledForm>
           </StyledSection>
         ) : (
           <StyledSection>
@@ -28,6 +34,16 @@ export default function SearchBookPage() {
               Search by Author and Title
             </StyledButton>
             <StyledH3>Search by ISBN:</StyledH3>
+            <StyledForm>
+              <label htmlFor="isbn-input">ISBN:</label>
+              <input
+                id="isbn-input"
+                name="isbn"
+                minLength="10"
+                maxLength="13"
+                required
+              />
+            </StyledForm>
           </StyledSection>
         )}
       </StyledContent>
@@ -60,6 +76,12 @@ const StyledH3 = styled.h3`
   display: block;
   text-align: center;
   padding-top: 10px;
+`;
+
+const StyledForm = styled.form`
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
 `;
 
 const StyledLink = styled(Link)`
