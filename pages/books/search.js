@@ -7,9 +7,11 @@ import StyledNavigation from "@/components/StyledNavigation/StyledNavigation";
 
 export default function SearchBookPage() {
   const [toggleSection, setToggleSection] = useState(true);
+  const [allIsbn, setAllIsbn] = useState([]);
 
   function handelToggleSection() {
     setToggleSection(!toggleSection);
+    setAllIsbn([]);
     const form = document.getElementById("author-title-form");
     form.reset();
   }
@@ -21,7 +23,26 @@ export default function SearchBookPage() {
     if (data.isbn) {
       console.log("ISBN:", data);
     } else {
-      console.log("Author and Title", data);
+      getIsbnByAuthorAndTitle(data.author, data.title);
+    }
+  }
+
+  async function getIsbnByAuthorAndTitle(author, title) {
+    const uri = `https://openlibrary.org/search.json?author=${author}&title=${title}`;
+    try {
+      let searchIsbn = [];
+      const response = await fetch(uri);
+      const data = await response.json();
+      data.docs.forEach((doc) => {
+        doc.isbn.forEach((isbn) => {
+          searchIsbn.push(isbn);
+        });
+      });
+      searchIsbn.sort((a, b) => b - a);
+      setAllIsbn(searchIsbn);
+    } catch (error) {
+      setAllIsbn([]);
+      return null;
     }
   }
 
