@@ -10,6 +10,8 @@ export default function SearchBookPage() {
 
   function handelToggleSection() {
     setToggleSection(!toggleSection);
+    const form = document.getElementById("author-title-form");
+    form.reset();
   }
 
   function handleSubmit(event) {
