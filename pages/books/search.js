@@ -23,7 +23,6 @@ export default function SearchBookPage() {
     } else {
       console.log("Author and Title", data);
     }
-    /* getIsbnByAuthorAndTitle(data.author, data.title); */
   }
 
   return (
